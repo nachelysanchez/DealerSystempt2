@@ -23,5 +23,11 @@ namespace DealerSystempt2
             rUsuarios user = new rUsuarios();
             user.Show();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rClientes cliente = new rClientes();
+            cliente.Show();
+        }
     }
 }
