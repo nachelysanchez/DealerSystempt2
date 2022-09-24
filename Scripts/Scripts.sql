@@ -67,3 +67,25 @@ AS
 	DELETE FROM dbo.Clientes WHERE ClienteId = @Id
 GO
 GO
+
+CREATE TABLE eVentas
+(
+	VentaId INTEGER PRIMARY KEY IDENTITY(1,1),
+	Fecha DATETIME,
+	Tipo INT,
+	ClienteId INTEGER FOREIGN KEY REFERENCES Clientes(ClienteId),
+	ITBIS decimal,
+	SubTotal decimal,
+	Total decimal,
+	Balance decimal
+);
+GO
+CREATE TABLE dVentas
+(
+	Id INTEGER PRIMARY KEY IDENTITY(1,1),
+	VentaId INTEGER FOREIGN KEY REFERENCES eVentas(VentaId),
+	VehiculoId INTEGER FOREIGN KEY REFERENCES Vehiculos(VehiculoId),
+	Precio decimal,
+	ITBIS decimal,
+	Importe decimal
+);

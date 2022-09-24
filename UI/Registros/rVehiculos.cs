@@ -23,7 +23,7 @@ namespace DealerSystempt2.UI.Registros
             MaximizeBox = false;
             conexion = new Connection();
             cnn = new OleDbConnection();
-            cnn.ConnectionString = @"PROVIDER = SQLOLEDB; Data Source = LAPTOP-TN73JHLV\SQLEXPRESS; Initial Catalog = DealerSystem; Integrated Security=SSPI;";
+            cnn.ConnectionString = @"PROVIDER = SQLOLEDB; Data Source = BRIAN-PC\BRIANSQLEXPRESS; Initial Catalog = DealerSystem; Integrated Security=SSPI;";
 
             Modelotxt.Enabled = false;
             Preciotxt.Enabled = false;

@@ -18,7 +18,7 @@ namespace DealerSystempt2.Conexion
         private SqlDataAdapter dataAdapter;
         private SqlDataReader datareader;
         private SqlCommand command;
-        private static string ConnectionString = "SERVER=" + svnameNach + ";DATABASE=" + dbname + ";Integrated Security = True;";
+        private static string ConnectionString = "SERVER=" + svnameBrian + ";DATABASE=" + dbname + ";Integrated Security = True;";
         private SqlConnection Conexion = new SqlConnection(ConnectionString);
 
 
