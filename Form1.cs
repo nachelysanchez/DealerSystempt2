@@ -23,5 +23,11 @@ namespace DealerSystempt2
             rUsuarios user = new rUsuarios();
             user.Show();
         }
+
+        private void vehiculosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rVehiculos vehiculo = new rVehiculos();
+            vehiculo.Show();
+        }
     }
 }

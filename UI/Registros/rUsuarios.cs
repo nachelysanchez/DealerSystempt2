@@ -219,16 +219,16 @@ namespace DealerSystempt2.UI.Registros
         }
         private void HabilitarModificar()
         {
-            Idtxt.Visible = false;
-            Nombretxt.Visible = true;
-            Usertxt.Visible = true;
-            tipoCmb.Visible = true;
-            Passtxt.Visible = true;
-            ActivoRadio.Visible = true;
+            Idtxt.Enabled = false;
+            Nombretxt.Enabled = true;
+            Usertxt.Enabled = true;
+            tipoCmb.Enabled = true;
+            Passtxt.Enabled = true;
+            ActivoRadio.Enabled = true;
 
-            btnModificar.Visible = true;
-            btnEliminar.Visible = true;
-            btnInsertar.Visible = false;
+            btnModificar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnInsertar.Enabled = false;
         }
     }
 }
