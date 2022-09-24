@@ -16,5 +16,10 @@ namespace DealerSystempt2.UI.Registros
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
