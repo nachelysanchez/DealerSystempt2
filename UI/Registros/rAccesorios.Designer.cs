@@ -261,7 +261,7 @@ namespace DealerSystempt2.UI.Registros
             this.Controls.Add(this.Idtxt);
             this.Controls.Add(this.label1);
             this.Name = "rAccesorios";
-            this.Text = "rAccesorios";
+            this.Text = "Registro de Accesorios";
             this.Load += new System.EventHandler(this.rAccesorios_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

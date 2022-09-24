@@ -81,7 +81,7 @@
             this.label1.ForeColor = System.Drawing.Color.LightSeaGreen;
             this.label1.Location = new System.Drawing.Point(411, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 40);
+            this.label1.Size = new System.Drawing.Size(240, 43);
             this.label1.TabIndex = 0;
             this.label1.Text = "Registro de ventas";
             // 
@@ -134,6 +134,7 @@
             this.label6.Size = new System.Drawing.Size(48, 18);
             this.label6.TabIndex = 6;
             this.label6.Text = "ITBIS";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -144,6 +145,7 @@
             this.label7.Size = new System.Drawing.Size(89, 18);
             this.label7.TabIndex = 7;
             this.label7.Text = "Descuento";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -154,6 +156,7 @@
             this.label8.Size = new System.Drawing.Size(80, 18);
             this.label8.TabIndex = 8;
             this.label8.Text = "Sub Total";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -164,6 +167,7 @@
             this.label9.Size = new System.Drawing.Size(46, 18);
             this.label9.TabIndex = 9;
             this.label9.Text = "Total";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -399,6 +403,7 @@
             this.SubTotalTextBox.Size = new System.Drawing.Size(152, 22);
             this.SubTotalTextBox.TabIndex = 30;
             this.SubTotalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.SubTotalTextBox.TextChanged += new System.EventHandler(this.SubTotalTextBox_TextChanged);
             // 
             // ITBISTextBox
             // 
@@ -408,6 +413,7 @@
             this.ITBISTextBox.Size = new System.Drawing.Size(152, 22);
             this.ITBISTextBox.TabIndex = 31;
             this.ITBISTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.ITBISTextBox.TextChanged += new System.EventHandler(this.ITBISTextBox_TextChanged);
             // 
             // DescuentoTextBox
             // 
@@ -416,6 +422,7 @@
             this.DescuentoTextBox.Size = new System.Drawing.Size(152, 22);
             this.DescuentoTextBox.TabIndex = 32;
             this.DescuentoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.DescuentoTextBox.TextChanged += new System.EventHandler(this.DescuentoTextBox_TextChanged);
             // 
             // TotalTextBox
             // 
@@ -425,6 +432,7 @@
             this.TotalTextBox.Size = new System.Drawing.Size(152, 22);
             this.TotalTextBox.TabIndex = 33;
             this.TotalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TotalTextBox.TextChanged += new System.EventHandler(this.TotalTextBox_TextChanged);
             // 
             // NuevoButton
             // 
@@ -515,6 +523,7 @@
             this.Controls.Add(this.label1);
             this.Name = "rVentas";
             this.Text = "Registro de Ventas";
+            this.Load += new System.EventHandler(this.rVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
