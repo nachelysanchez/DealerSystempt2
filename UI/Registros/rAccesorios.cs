@@ -13,48 +13,95 @@ using System.Windows.Forms;
 
 namespace DealerSystempt2.UI.Registros
 {
-    public partial class rUsuarios : Form
+    public partial class rAccesorios : Form
     {
-
         Connection conexion;
         OleDbConnection cnn;
-        public rUsuarios()
+        public rAccesorios()
         {
             InitializeComponent();
             MaximizeBox = false;
             conexion = new Connection();
+
+            Cancelar();
+
             cnn = new OleDbConnection();
             cnn.ConnectionString = @"PROVIDER = SQLOLEDB; Data Source = LAPTOP-TN73JHLV\SQLEXPRESS; Initial Catalog = DealerSystem; Integrated Security=SSPI;";
-            Cancelar();
+
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Nuevo();
         }
 
         private void Nuevo()
         {
-            getUltimaUsuario();
+            getUltimoAccesorio();
             Idtxt.ReadOnly = true;
             Nombretxt.Clear();
-            Usertxt.Clear();
-            Passtxt.Clear();
-            tipoCmb.Text = "Seleccionar";
+            Preciotxt.Clear();
+            //tipoCmb.SelectedIndex = 0;
             Idtxt.Enabled = true;
             Nombretxt.Enabled = true;
-            Usertxt.Enabled = true;
-            Passtxt.Enabled = true;
+            Preciotxt.Enabled = true;
             tipoCmb.Enabled = true;
-            ActivoRadio.Enabled = true;
-            ActivoRadio.Checked = true;
-            btnInsertar.Enabled = true;
             btnModificar.Enabled = false;
-            btnEliminar.Enabled = false;
-            Passtxt.Enabled = true;
+            btnInsertar.Enabled = true;
         }
 
-        private void getUltimaUsuario()
+        private void rAccesorios_Load(object sender, EventArgs e)
+        {
+            tipoCmb.DropDownStyle = ComboBoxStyle.DropDownList;
+            LlenarCombo();
+        }
+        public void LlenarCombo()
+        {
+            DataSet ds = new DataSet();
+            string sql = "SELECT TipoId, Nombre FROM dbo.TiposVehiculos";
+            SqlDataAdapter da = new SqlDataAdapter(sql, conexion.Conectar());
+            da.Fill(ds, "dbo.TiposVehiculos");
+            tipoCmb.DataSource = ds.Tables[0].DefaultView;
+            tipoCmb.ValueMember = "TipoId";
+            tipoCmb.DisplayMember = "Nombre";
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM dbo.Accesorios WHERE AccesorioId = " + Idtxt.Text;
+            SqlDataAdapter da1 = new SqlDataAdapter(query, conexion.Conectar());
+
+            SqlDataReader dr1 = da1.SelectCommand.ExecuteReader();
+
+            while (dr1.Read())
+            {
+                Nombretxt.Text = dr1["Nombre"].ToString().Trim();
+                Preciotxt.Text = dr1["Precio"].ToString().Trim();
+                tipoCmb.SelectedIndex = int.Parse(dr1["TipoId"].ToString()) - 1;
+            }
+            if (dr1 != null)
+            {
+                dr1.Close();
+                HabilitarModificar();
+            }
+        }
+        private void HabilitarModificar()
+        {
+            Idtxt.Enabled = false;
+            Nombretxt.Enabled = true;
+            Preciotxt.Enabled = true;
+            tipoCmb.Enabled = true;
+            btnModificar.Enabled = true;
+            btnInsertar.Enabled = false;
+            btnEliminar.Enabled = true;
+        }
+
+        private void getUltimoAccesorio()
         {
             try
             {
                 DataTable dt = new DataTable();
-                string query = "SELECT top(1) ID FROM Usuarios ORDER BY ID desc";
+                string query = "SELECT top(1) AccesorioId FROM Accesorios Order by AccesorioId desc";
 
                 SqlCommand command = new SqlCommand(query, conexion.Conectar());
                 SqlDataAdapter da = new SqlDataAdapter(command);
@@ -65,7 +112,7 @@ namespace DealerSystempt2.UI.Registros
                 }
                 else
                 {
-                    int id = int.Parse(dt.Rows[0]["Id"].ToString());
+                    int id = int.Parse(dt.Rows[0]["AccesorioId"].ToString());
                     id++;
                     Idtxt.Text = (id).ToString();
                 }
@@ -78,11 +125,6 @@ namespace DealerSystempt2.UI.Registros
 
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            Nuevo();
-        }
-
         private void btnInsertar_Click(object sender, EventArgs e)
         {
             try
@@ -91,22 +133,24 @@ namespace DealerSystempt2.UI.Registros
                     return;
                 string inserpart;
 
-                inserpart = $"EXEC sp_InsertarUsuarios {Idtxt.Text}, '{Nombretxt.Text}', '{Usertxt.Text}', '{Passtxt.Text}', {tipoCmb.SelectedIndex+1}, {ActivoRadio.Checked}";
+                inserpart = "INSERT INTO dbo.Accesorios " +
+                    $"VALUES ({Idtxt.Text}, '{Nombretxt.Text}', {Preciotxt.Text}, {tipoCmb.SelectedIndex + 1})";
                 SqlCommand insert1 = new SqlCommand(inserpart, conexion.Conectar());
 
 
                 insert1.ExecuteNonQuery();
 
-                MessageBox.Show("Usuario guardado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Accesorio guardado", "Exito");
                 //conn1.Close();
                 Nuevo();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                MessageBox.Show("Comuniquese con los desarrolladores " + ex.Message, "Error");
                 throw;
             }
         }
+
         private bool Validar()
         {
             bool paso = true;
@@ -116,22 +160,16 @@ namespace DealerSystempt2.UI.Registros
                 Nombretxt.Focus();
                 paso = false;
             }
-            else if (string.IsNullOrEmpty(Usertxt.Text))
+            else if (string.IsNullOrEmpty(Preciotxt.Text))
             {
-                MessageBox.Show("Completar el campo Usuario", "Validación", MessageBoxButtons.OKCancel);
-                Usertxt.Focus();
+                MessageBox.Show("Completar el campo Precio", "Validación", MessageBoxButtons.OKCancel);
+                Preciotxt.Focus();
                 paso = false;
             }
             else if (tipoCmb.SelectedIndex < 0)
             {
-                MessageBox.Show("Seleccione un tipo de usuario", "Validación", MessageBoxButtons.OKCancel);
+                MessageBox.Show("Seleccione un tipo de vehiculo", "Validación", MessageBoxButtons.OKCancel);
                 tipoCmb.Focus();
-                paso = false;
-            }
-            else if (string.IsNullOrEmpty(Passtxt.Text))
-            {
-                MessageBox.Show("Complete la contraseña", "Validación", MessageBoxButtons.OKCancel);
-                Passtxt.Focus();
                 paso = false;
             }
             return paso;
@@ -143,7 +181,9 @@ namespace DealerSystempt2.UI.Registros
             {
                 string actualizar;
 
-                actualizar = $"EXEC sp_ModificarUsuarios {Idtxt.Text}, '{Nombretxt.Text}', '{Usertxt.Text}', '{Passtxt.Text}', {tipoCmb.SelectedIndex + 1}, {ActivoRadio.Checked}";
+                actualizar = "UPDATE dbo.Accesorios SET " +
+                    "Nombre = '" + Nombretxt.Text + "', Precio = " + Preciotxt.Text + "" +
+                    ", TipoId = " + (tipoCmb.SelectedIndex + 1) + " WHERE AccesorioId = " + Idtxt.Text;
 
 
                 OleDbCommand datos = new OleDbCommand(actualizar, cnn);
@@ -151,8 +191,7 @@ namespace DealerSystempt2.UI.Registros
 
                 datos.ExecuteNonQuery();
                 cnn.Close();
-
-                MessageBox.Show("Usuario modificado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Accesorio modificado", "Exito");
             }
             catch (Exception ex)
             {
@@ -166,13 +205,13 @@ namespace DealerSystempt2.UI.Registros
             try
             {
                 string actualizar;
-                actualizar = "EXEC sp_EliminarUsuarios " + Idtxt.Text;
+                actualizar = "DELETE FROM dbo.Accesorios WHERE AccesorioId=" + Idtxt.Text + "";
                 cnn.Open();
                 OleDbCommand datos = new OleDbCommand(actualizar, cnn);
 
                 datos.ExecuteNonQuery();
                 cnn.Close();
-                MessageBox.Show("Usuario eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("ELIMINADO");
                 Nuevo();
             }
             catch (Exception ex)
@@ -182,53 +221,21 @@ namespace DealerSystempt2.UI.Registros
             }
         }
 
-        private void Cancelar()
-        {
-            Idtxt.Enabled = true;
-            Idtxt.ReadOnly = false;
-            Nombretxt.Enabled = false;
-            Usertxt.Enabled = false;
-            Passtxt.Enabled = false;
-            tipoCmb.Enabled = false;
-            ActivoRadio.Enabled = false;
-        }
         private void CancelarButton_Click(object sender, EventArgs e)
         {
             Cancelar();
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void Cancelar()
         {
-            string query = "EXEC sp_BuscarUsuarios " + Idtxt.Text;
-            SqlDataAdapter da1 = new SqlDataAdapter(query, conexion.Conectar());
-
-            SqlDataReader dr1 = da1.SelectCommand.ExecuteReader();
-
-            while (dr1.Read())
-            {
-                Nombretxt.Text = dr1["Nombre"].ToString().Trim();
-                Usertxt.Text = dr1["Usuario"].ToString().Trim();
-                tipoCmb.SelectedIndex = int.Parse(dr1["Tipo"].ToString()) - 1;
-                ActivoRadio.Checked = (bool)dr1["Estado"];
-            }
-            if (dr1 != null)
-            {
-                dr1.Close();
-                HabilitarModificar();
-            }
-        }
-        private void HabilitarModificar()
-        {
-            Idtxt.Enabled = false;
-            Nombretxt.Enabled = true;
-            Usertxt.Enabled = true;
-            tipoCmb.Enabled = true;
-            Passtxt.Enabled = true;
-            ActivoRadio.Enabled = true;
-
-            btnModificar.Enabled = true;
-            btnEliminar.Enabled = true;
+            Idtxt.Enabled = true;
+            Idtxt.ReadOnly = false;
+            Nombretxt.Enabled = false;
+            Preciotxt.Enabled = false;
+            tipoCmb.Enabled = false;
+            btnEliminar.Enabled = false;
             btnInsertar.Enabled = false;
+            btnModificar.Enabled = false;
         }
     }
 }

@@ -24,6 +24,18 @@ namespace DealerSystempt2
             user.Show();
         }
 
+        private void vehiculosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rVehiculos vehiculo = new rVehiculos();
+            vehiculo.Show();
+        }
+
+        private void accesoriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rAccesorios accesorios = new rAccesorios();
+            accesorios.Show();
+        }
+
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rClientes cliente = new rClientes();
