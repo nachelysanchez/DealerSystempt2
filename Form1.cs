@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DealerSystempt2.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,8 @@ namespace DealerSystempt2
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            rUsuarios user = new rUsuarios();
+            user.Show();
         }
     }
 }
