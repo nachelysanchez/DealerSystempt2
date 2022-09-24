@@ -89,3 +89,113 @@ CREATE TABLE dVentas
 	ITBIS decimal,
 	Importe decimal
 );
+
+--Nachely Sanchez : 24/9/2022
+CREATE TABLE Suplidores
+(
+	SuplidorId int primary key identity(1,1),
+	Nombre varchar(200),
+	Empresa varchar(200),
+	Telefono varchar(17),
+	Correo varchar(max),
+	Observaciones varchar(max)
+)
+GO
+
+CREATE PROCEDURE sp_InsertarSuplidor
+@Nombre varchar(200), 
+@Empresa varchar(200), 
+@Telefono varchar(max), 
+@Correo varchar(max), 
+@Observaciones varchar(max)
+AS
+	INSERT INTO dbo.Suplidores VALUES (@Nombre, @Empresa, @Telefono, @Correo, @Observaciones)
+GO
+
+CREATE PROCEDURE sp_ModificarSuplidor
+@Id int, 
+@Nombre varchar(200), 
+@Empresa varchar(200), 
+@Telefono varchar(max), 
+@Correo varchar(max), 
+@Observaciones varchar(max)
+AS
+	UPDATE dbo.Suplidores 
+		SET Nombre = @Nombre, 
+		Empresa = @Empresa, 
+		Telefono = @Telefono, 
+		Correo = @Correo, 
+		Observaciones = @Observaciones 
+	WHERE SuplidorId = @Id
+GO
+
+CREATE PROCEDURE sp_EliminarSuplidor
+@Id int
+AS
+	DELETE FROM dbo.Suplidores WHERE SuplidorId = @Id
+GO
+
+CREATE PROCEDURE sp_BuscarSuplidor
+@Id int
+AS
+	SELECT * FROM dbo.Suplidores WHERE SuplidorId = @Id
+GO
+
+CREATE TABLE eVentasAccesorios
+(
+VentaId int primary key identity(1,1),
+ClienteId int FOREIGN KEY REFERENCES Clientes(ClienteId),
+Tipo int,
+Fecha varchar(100),
+Subtotal money,
+Itbis money, 
+Descuento money,
+Total money
+)
+GO
+
+CREATE PROCEDURE sp_InsertareVentaAccesorio
+@ClienteId int, 
+@Tipo int, 
+@Fecha varchar(100), 
+@Subtotal money, 
+@Itbis money, 
+@Descuento money, 
+@Total money
+AS
+	INSERT INTO dbo.eVentasAccesorios 
+	VALUES (@ClienteId, @Tipo, @Fecha, @Subtotal, @Itbis, @Descuento, @Total)
+GO
+
+CREATE PROCEDURE sp_ModificareVentaAccesorio
+@Id int, 
+@ClienteId int, 
+@Tipo int, 
+@Fecha varchar(100), 
+@Subtotal money, 
+@Itbis money, 
+@Descuento money, 
+@Total money
+AS
+	UPDATE dbo.eVentasAccesorios
+		SET ClienteId = @ClienteId, 
+		Tipo = @Tipo, 
+		Fecha = @Fecha, 
+		Subtotal = @Subtotal, 
+		Itbis = @Itbis,
+		Descuento = @Descuento,
+		Total = @Total
+	WHERE VentaId = @Id
+GO
+
+CREATE PROCEDURE sp_EliminareVentaAccesorio
+@Id int
+AS
+	DELETE FROM dbo.eVentasAccesorios WHERE VentaId = @Id
+GO
+
+CREATE PROCEDURE sp_BuscareVentaAccesorio
+@Id int
+AS
+	SELECT * FROM dbo.eVentasAccesorios WHERE VentaId = @Id
+GO

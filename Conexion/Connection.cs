@@ -11,14 +11,19 @@ namespace DealerSystempt2.Conexion
 {
     class Connection
     {
-        private static string svnameNach = @"LAPTOP-TN73JHLV\SQLEXPRESS";
-        private static string svnameBrian = @"BRIAN-PC\BRIANSQLEXPRESS";
+        //NACH
+        public static string svname = @"LAPTOP-TN73JHLV\SQLEXPRESS";
+        //BRIAN
+        //public string svname = @"BRIAN-PC\BRIANSQLEXPRESS";
         private static string dbname = "DealerSystem";
 
         private SqlDataAdapter dataAdapter;
         private SqlDataReader datareader;
         private SqlCommand command;
-        private static string ConnectionString = "SERVER=" + svnameBrian + ";DATABASE=" + dbname + ";Integrated Security = True;";
+        private static string ConnectionString = "SERVER=" + svname + ";DATABASE=" + dbname + ";Integrated Security = True;";
+       
+        
+        //CAMBIAR CONNECTION STRING AL TRABAJAR
         private SqlConnection Conexion = new SqlConnection(ConnectionString);
 
 

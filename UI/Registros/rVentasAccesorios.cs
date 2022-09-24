@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace DealerSystempt2.UI.Registros
 {
-    public partial class rVentas : Form
+    public partial class rVentasAccesorios : Form
     {
-        public rVentas()
+        public rVentasAccesorios()
         {
             InitializeComponent();
+        }
+
+        private void Importetxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

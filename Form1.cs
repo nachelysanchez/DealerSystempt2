@@ -47,5 +47,17 @@ namespace DealerSystempt2
             rVentas ventas = new rVentas();
             ventas.Show();
         }
+
+        private void suplidoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rSuplidores suplidor = new rSuplidores();
+            suplidor.Show();
+        }
+
+        private void ventasDeAccesoriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rVentasAccesorios vaccesorios = new rVentasAccesorios();
+            vaccesorios.Show();
+        }
     }
 }
