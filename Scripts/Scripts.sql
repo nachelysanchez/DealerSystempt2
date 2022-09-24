@@ -89,3 +89,54 @@ CREATE TABLE dVentas
 	ITBIS decimal,
 	Importe decimal
 );
+
+--Nachely Sanchez : 24/9/2022
+CREATE TABLE Suplidores
+(
+	SuplidorId int primary key identity(1,1),
+	Nombre varchar(200),
+	Empresa varchar(200),
+	Telefono varchar(17),
+	Correo varchar(max),
+	Observaciones varchar(max)
+)
+
+
+CREATE PROCEDURE sp_InsertarSuplidor
+@Nombre varchar(200), 
+@Empresa varchar(200), 
+@Telefono varchar(max), 
+@Correo varchar(max), 
+@Observaciones varchar(max)
+AS
+	INSERT INTO dbo.Suplidores VALUES (@Nombre, @Empresa, @Telefono, @Correo, @Observaciones)
+GO
+
+CREATE PROCEDURE sp_ModificarSuplidor
+@Id int, 
+@Nombre varchar(200), 
+@Empresa varchar(200), 
+@Telefono varchar(max), 
+@Correo varchar(max), 
+@Observaciones varchar(max)
+AS
+	UPDATE dbo.Suplidores 
+		SET Nombre = @Nombre, 
+		Empresa = @Empresa, 
+		Telefono = @Telefono, 
+		Correo = @Correo, 
+		Observaciones = @Observaciones 
+	WHERE SuplidorId = @Id
+GO
+
+CREATE PROCEDURE sp_EliminarSuplidor
+@Id int
+AS
+	DELETE FROM dbo.Suplidores WHERE SuplidorId = @Id
+GO
+
+CREATE PROCEDURE sp_BuscarSuplidor
+@Id int
+AS
+	SELECT * FROM dbo.Suplidores WHERE SuplidorId = @Id
+GO
