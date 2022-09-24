@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DealerSystempt2
+namespace DealerSystempt2.UI.Registros
 {
-    public partial class Form1 : Form
+    public partial class rUsuarios : Form
     {
-        public Form1()
+        public rUsuarios()
         {
             InitializeComponent();
-        }
-
-        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
