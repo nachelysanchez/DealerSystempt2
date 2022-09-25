@@ -133,6 +133,9 @@
     <EmbeddedResource Include="UI\Registros\rClientes.resx">
       <DependentUpon>rClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rCobros.resx">
+      <DependentUpon>rCobros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rCompras.resx">
       <DependentUpon>rCompras.cs</DependentUpon>
     </EmbeddedResource>
