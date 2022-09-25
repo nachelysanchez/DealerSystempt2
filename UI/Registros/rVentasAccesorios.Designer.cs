@@ -38,21 +38,26 @@ namespace DealerSystempt2.UI.Registros
             this.label3 = new System.Windows.Forms.Label();
             this.tipocmb = new System.Windows.Forms.ComboBox();
             this.DetalleDTG = new System.Windows.Forms.DataGridView();
+            this.AccesorioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Accesorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.Importetxt = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Preciotxt = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.NombreAccesoriotxt = new System.Windows.Forms.TextBox();
+            this.BuscarAccesorioButton = new System.Windows.Forms.Button();
+            this.AccesorioIstxt = new System.Windows.Forms.TextBox();
             this.Cantidadtxt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.BuscarClienteButton = new System.Windows.Forms.Button();
             this.ClienteIdtxt = new System.Windows.Forms.TextBox();
             this.NombreCliente = new System.Windows.Forms.TextBox();
-            this.NombreAccesoriotxt = new System.Windows.Forms.TextBox();
-            this.BuscarAccesorioButton = new System.Windows.Forms.Button();
-            this.AccesorioIstxt = new System.Windows.Forms.TextBox();
-            this.Preciotxt = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Importetxt = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.Subtotaltxt = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.itbistxt = new System.Windows.Forms.TextBox();
@@ -66,11 +71,6 @@ namespace DealerSystempt2.UI.Registros
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.AccesorioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Accesorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDTG)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -99,6 +99,7 @@ namespace DealerSystempt2.UI.Registros
             this.btnBuscar.TabIndex = 76;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // Idtxt
             // 
@@ -186,6 +187,46 @@ namespace DealerSystempt2.UI.Registros
             this.DetalleDTG.Size = new System.Drawing.Size(1021, 242);
             this.DetalleDTG.TabIndex = 81;
             // 
+            // AccesorioId
+            // 
+            this.AccesorioId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AccesorioId.HeaderText = "Accesorio ID";
+            this.AccesorioId.MinimumWidth = 6;
+            this.AccesorioId.Name = "AccesorioId";
+            this.AccesorioId.ReadOnly = true;
+            // 
+            // Accesorio
+            // 
+            this.Accesorio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Accesorio.HeaderText = "Accesorio";
+            this.Accesorio.MinimumWidth = 6;
+            this.Accesorio.Name = "Accesorio";
+            this.Accesorio.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // Importe
+            // 
+            this.Importe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Importe.HeaderText = "Importe";
+            this.Importe.MinimumWidth = 6;
+            this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.Importetxt);
@@ -206,18 +247,101 @@ namespace DealerSystempt2.UI.Registros
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle de la Venta";
             // 
-            // label5
+            // Importetxt
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Importetxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 45);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 17);
-            this.label5.TabIndex = 82;
-            this.label5.Text = "Accesorio";
+            this.Importetxt.Location = new System.Drawing.Point(919, 42);
+            this.Importetxt.Name = "Importetxt";
+            this.Importetxt.ReadOnly = true;
+            this.Importetxt.Size = new System.Drawing.Size(119, 22);
+            this.Importetxt.TabIndex = 93;
+            this.Importetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Importetxt_KeyPress);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(856, 44);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(62, 17);
+            this.label9.TabIndex = 92;
+            this.label9.Text = "Importe";
+            // 
+            // Preciotxt
+            // 
+            this.Preciotxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Preciotxt.Location = new System.Drawing.Point(725, 44);
+            this.Preciotxt.Name = "Preciotxt";
+            this.Preciotxt.ReadOnly = true;
+            this.Preciotxt.Size = new System.Drawing.Size(119, 22);
+            this.Preciotxt.TabIndex = 91;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(665, 45);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 17);
+            this.label8.TabIndex = 90;
+            this.label8.Text = "Precio";
+            // 
+            // NombreAccesoriotxt
+            // 
+            this.NombreAccesoriotxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.NombreAccesoriotxt.Location = new System.Drawing.Point(298, 44);
+            this.NombreAccesoriotxt.Name = "NombreAccesoriotxt";
+            this.NombreAccesoriotxt.ReadOnly = true;
+            this.NombreAccesoriotxt.Size = new System.Drawing.Size(181, 22);
+            this.NombreAccesoriotxt.TabIndex = 89;
+            // 
+            // BuscarAccesorioButton
+            // 
+            this.BuscarAccesorioButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BuscarAccesorioButton.BackColor = System.Drawing.Color.Silver;
+            this.BuscarAccesorioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuscarAccesorioButton.ForeColor = System.Drawing.Color.White;
+            this.BuscarAccesorioButton.Location = new System.Drawing.Point(194, 37);
+            this.BuscarAccesorioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BuscarAccesorioButton.Name = "BuscarAccesorioButton";
+            this.BuscarAccesorioButton.Size = new System.Drawing.Size(91, 36);
+            this.BuscarAccesorioButton.TabIndex = 88;
+            this.BuscarAccesorioButton.Text = "Buscar";
+            this.BuscarAccesorioButton.UseVisualStyleBackColor = false;
+            this.BuscarAccesorioButton.Click += new System.EventHandler(this.BuscarAccesorioButton_Click);
+            // 
+            // AccesorioIstxt
+            // 
+            this.AccesorioIstxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AccesorioIstxt.Location = new System.Drawing.Point(97, 44);
+            this.AccesorioIstxt.Name = "AccesorioIstxt";
+            this.AccesorioIstxt.Size = new System.Drawing.Size(95, 22);
+            this.AccesorioIstxt.TabIndex = 87;
+            // 
+            // Cantidadtxt
+            // 
+            this.Cantidadtxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Cantidadtxt.Location = new System.Drawing.Point(568, 44);
+            this.Cantidadtxt.Name = "Cantidadtxt";
+            this.Cantidadtxt.Size = new System.Drawing.Size(90, 22);
+            this.Cantidadtxt.TabIndex = 85;
+            this.Cantidadtxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cantidadtxt_KeyDown);
             // 
             // label6
             // 
@@ -232,16 +356,18 @@ namespace DealerSystempt2.UI.Registros
             this.label6.TabIndex = 84;
             this.label6.Text = "Cantidad";
             // 
-            // Cantidadtxt
+            // label5
             // 
-            this.Cantidadtxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Cantidadtxt.Location = new System.Drawing.Point(568, 44);
-            this.Cantidadtxt.Name = "Cantidadtxt";
-            this.Cantidadtxt.Size = new System.Drawing.Size(90, 22);
-            this.Cantidadtxt.TabIndex = 85;
-            this.Cantidadtxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cantidadtxt_KeyDown);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 17);
+            this.label5.TabIndex = 82;
+            this.label5.Text = "Accesorio";
             // 
             // label7
             // 
@@ -291,91 +417,6 @@ namespace DealerSystempt2.UI.Registros
             this.NombreCliente.ReadOnly = true;
             this.NombreCliente.Size = new System.Drawing.Size(670, 22);
             this.NombreCliente.TabIndex = 86;
-            // 
-            // NombreAccesoriotxt
-            // 
-            this.NombreAccesoriotxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.NombreAccesoriotxt.Location = new System.Drawing.Point(298, 44);
-            this.NombreAccesoriotxt.Name = "NombreAccesoriotxt";
-            this.NombreAccesoriotxt.ReadOnly = true;
-            this.NombreAccesoriotxt.Size = new System.Drawing.Size(181, 22);
-            this.NombreAccesoriotxt.TabIndex = 89;
-            // 
-            // BuscarAccesorioButton
-            // 
-            this.BuscarAccesorioButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.BuscarAccesorioButton.BackColor = System.Drawing.Color.Silver;
-            this.BuscarAccesorioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuscarAccesorioButton.ForeColor = System.Drawing.Color.White;
-            this.BuscarAccesorioButton.Location = new System.Drawing.Point(194, 37);
-            this.BuscarAccesorioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BuscarAccesorioButton.Name = "BuscarAccesorioButton";
-            this.BuscarAccesorioButton.Size = new System.Drawing.Size(91, 36);
-            this.BuscarAccesorioButton.TabIndex = 88;
-            this.BuscarAccesorioButton.Text = "Buscar";
-            this.BuscarAccesorioButton.UseVisualStyleBackColor = false;
-            this.BuscarAccesorioButton.Click += new System.EventHandler(this.BuscarAccesorioButton_Click);
-            // 
-            // AccesorioIstxt
-            // 
-            this.AccesorioIstxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AccesorioIstxt.Location = new System.Drawing.Point(97, 44);
-            this.AccesorioIstxt.Name = "AccesorioIstxt";
-            this.AccesorioIstxt.Size = new System.Drawing.Size(95, 22);
-            this.AccesorioIstxt.TabIndex = 87;
-            // 
-            // Preciotxt
-            // 
-            this.Preciotxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Preciotxt.Location = new System.Drawing.Point(725, 44);
-            this.Preciotxt.Name = "Preciotxt";
-            this.Preciotxt.ReadOnly = true;
-            this.Preciotxt.Size = new System.Drawing.Size(119, 22);
-            this.Preciotxt.TabIndex = 91;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(665, 45);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 17);
-            this.label8.TabIndex = 90;
-            this.label8.Text = "Precio";
-            // 
-            // Importetxt
-            // 
-            this.Importetxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Importetxt.Location = new System.Drawing.Point(919, 42);
-            this.Importetxt.Name = "Importetxt";
-            this.Importetxt.ReadOnly = true;
-            this.Importetxt.Size = new System.Drawing.Size(119, 22);
-            this.Importetxt.TabIndex = 93;
-            this.Importetxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Importetxt_KeyPress);
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(856, 44);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 17);
-            this.label9.TabIndex = 92;
-            this.label9.Text = "Importe";
             // 
             // Subtotaltxt
             // 
@@ -549,46 +590,6 @@ namespace DealerSystempt2.UI.Registros
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // AccesorioId
-            // 
-            this.AccesorioId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AccesorioId.HeaderText = "Accesorio ID";
-            this.AccesorioId.MinimumWidth = 6;
-            this.AccesorioId.Name = "AccesorioId";
-            this.AccesorioId.ReadOnly = true;
-            // 
-            // Accesorio
-            // 
-            this.Accesorio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Accesorio.HeaderText = "Accesorio";
-            this.Accesorio.MinimumWidth = 6;
-            this.Accesorio.Name = "Accesorio";
-            this.Accesorio.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // Importe
-            // 
-            this.Importe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Importe.HeaderText = "Importe";
-            this.Importe.MinimumWidth = 6;
-            this.Importe.Name = "Importe";
-            this.Importe.ReadOnly = true;
             // 
             // rVentasAccesorios
             // 

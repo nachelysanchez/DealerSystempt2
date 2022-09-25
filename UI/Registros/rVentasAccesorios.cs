@@ -173,12 +173,12 @@ namespace DealerSystempt2.UI.Registros
             AccesorioIstxt.Clear();
             Cantidadtxt.Clear();
         }
-
-        private void BuscarClienteButton_Click(object sender, EventArgs e)
+        private void BuscarCliente()
         {
             string query = $"EXEC sp_BuscarCliente {ClienteIdtxt.Text}";
 
             SqlDataAdapter da1 = new SqlDataAdapter(query, conexion.Conectar());
+
             SqlDataReader dr1 = da1.SelectCommand.ExecuteReader();
             if(dr1.HasRows != false)
             {
@@ -197,6 +197,10 @@ namespace DealerSystempt2.UI.Registros
                 MessageBox.Show("Cliente no encontrado","Busqueda", MessageBoxButtons.OK);
                 dr1.Close();
             }
+        }
+        private void BuscarClienteButton_Click(object sender, EventArgs e)
+        {
+            BuscarCliente();
         }
 
         private void Descuentotxt_TextChanged(object sender, EventArgs e)
@@ -296,6 +300,66 @@ namespace DealerSystempt2.UI.Registros
                 paso = false;
             }
             return paso;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string query = "EXEC sp_BuscareVentaAccesorio " + Idtxt.Text;
+            SqlDataAdapter da1 = new SqlDataAdapter(query, conexion.Conectar());
+
+            SqlDataReader dr1 = da1.SelectCommand.ExecuteReader();
+
+            while (dr1.Read())
+            {
+                ClienteIdtxt.Text = dr1["ClienteId"].ToString();
+                
+                tipocmb.SelectedIndex = int.Parse(dr1["Tipo"].ToString()) -1;
+                FechaDatePicker.Value = DateTime.Parse(dr1["Fecha"].ToString());
+                Subtotaltxt.Text = dr1["Subtotal"].ToString();
+                itbistxt.Text = dr1["Itbis"].ToString();
+                Descuentotxt.Text = dr1["Descuento"].ToString();
+                totaltxt.Text = dr1["Total"].ToString();
+
+
+            }
+            if (dr1 != null)
+            {
+                dr1.Close();
+                HabilitarModificar();
+            }
+            else
+            {
+                dr1.Close();
+            }
+            BuscarCliente();
+
+
+            string query1 = "EXEC sp_BuscardVentaAccesorio " + Idtxt.Text;
+            SqlDataAdapter da2 = new SqlDataAdapter(query1, conexion.Conectar());
+
+            //SqlDataReader dr2 = da1.SelectCommand.ExecuteReader();
+            DataTable dt = new DataTable();
+
+            da2.Fill(dt);
+
+            DetalleDTG.DataSource = dt;
+            
+        }
+
+        private void HabilitarModificar()
+        {
+            Idtxt.Enabled = false;
+            ClienteIdtxt.Enabled = true;
+            tipocmb.Enabled = true;
+            FechaDatePicker.Enabled = true;
+            Subtotaltxt.Enabled = true;
+            itbistxt.Enabled = true;
+            Descuentotxt.Enabled = true;
+            totaltxt.Enabled = true;
+
+            btnModificar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnInsertar.Enabled = false;
         }
     }
 }
