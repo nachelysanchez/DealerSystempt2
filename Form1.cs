@@ -59,5 +59,11 @@ namespace DealerSystempt2
             rVentasAccesorios vaccesorios = new rVentasAccesorios();
             vaccesorios.Show();
         }
+
+        private void comprasDeAccesoriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rCompras compras = new rCompras();
+            compras.Show();
+        }
     }
 }

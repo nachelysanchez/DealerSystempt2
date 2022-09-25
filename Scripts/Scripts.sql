@@ -225,7 +225,7 @@ CREATE TABLE dVentas
 	ITBIS decimal,
 	Importe decimal
 );
-
+GO
 
 CREATE PROCEDURE sp_BuscarEVenta
 @VentaId INT
@@ -292,4 +292,86 @@ CREATE PROCEDURE sp_EliminarDVentas
 AS
 	DELETE FROM dbo.dVentas WHERE VentaId = @Id
 GO
+GO
+
+--Nach : 25/9/2022
+CREATE PROCEDURE sp_InsertareVentaAccesorio
+@ClienteId int, 
+@Tipo int, 
+@Fecha DATETIME, 
+@Subtotal money, 
+@Itbis money, 
+@Descuento money, 
+@Total money
+AS
+	INSERT INTO dbo.eVentasAccesorios 
+	VALUES (@ClienteId, @Tipo, @Fecha, @Subtotal, @Itbis, @Descuento, @Total)
+GO
+
+CREATE PROCEDURE sp_ModificareVentaAccesorio
+@Id int, 
+@ClienteId int, 
+@Tipo int, 
+@Fecha Datetime, 
+@Subtotal money, 
+@Itbis money, 
+@Descuento money, 
+@Total money
+AS
+	UPDATE dbo.eVentasAccesorios
+		SET ClienteId = @ClienteId, 
+		Tipo = @Tipo, 
+		Fecha = @Fecha, 
+		Subtotal = @Subtotal, 
+		Itbis = @Itbis,
+		Descuento = @Descuento,
+		Total = @Total
+	WHERE VentaId = @Id
+GO
+
+CREATE PROCEDURE sp_EliminareVentaAccesorio
+@Id int
+AS
+	DELETE FROM dbo.eVentasAccesorios WHERE VentaId = @Id
+GO
+
+CREATE PROCEDURE sp_BuscareVentaAccesorio
+@Id int
+AS
+	SELECT * FROM dbo.eVentasAccesorios WHERE VentaId = @Id
+GO
+
+CREATE TABLE dVentasAccesorios
+(
+Id int primary key identity(1,1),
+VentaId int FOREIGN KEY REFERENCES dbo.eVentasAccesorios(VentaId),
+AccesorioId int FOREIGN KEY REFERENCES dbo.Accesorios(AccesorioId),
+Descripcion varchar(100),
+Cantidad int, 
+Precio money,
+Importe money
+)
+GO
+CREATE PROCEDURE sp_InsertardVentaAccesorio
+@VentaId int, 
+@AccesorioId int, 
+@Descripcion varchar(100), 
+@Cantidad int, 
+@Precio money, 
+@Importe money
+AS
+	INSERT INTO dbo.dVentasAccesorios 
+	VALUES (@VentaId, @AccesorioId, @Descripcion, @Cantidad, @Precio, @Importe)
+GO
+
+ALTER PROCEDURE sp_EliminardVentaAccesorio
+@Id int
+AS
+	DELETE FROM dbo.dVentasAccesorios WHERE VentaId = @Id
+GO
+
+CREATE PROCEDURE sp_BuscardVentaAccesorio
+@Id int
+AS
+	SELECT * FROM dbo.dVentasAccesorios WHERE VentaId = @Id
 GO

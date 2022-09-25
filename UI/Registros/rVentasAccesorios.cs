@@ -51,7 +51,6 @@ namespace DealerSystempt2.UI.Registros
 
 
             btnInsertar.Enabled = false;
-            btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
         }
 
@@ -81,7 +80,6 @@ namespace DealerSystempt2.UI.Registros
             AccesorioIstxt.Enabled = true;
             tipocmb.Enabled = true;
             Cantidadtxt.Enabled = true;
-            btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
             btnInsertar.Enabled = true;
         }
@@ -111,7 +109,7 @@ namespace DealerSystempt2.UI.Registros
                 subtotal += float.Parse(row.Cells["Importe"].Value.ToString());
                 itbis += (subtotal* 18 / 100);
                 
-                total += (itbis+subtotal+itbis-descuento);
+                total += (itbis+subtotal-descuento);
                 
                 
             }
@@ -325,7 +323,7 @@ namespace DealerSystempt2.UI.Registros
             if (dr1 != null)
             {
                 dr1.Close();
-                HabilitarModificar();
+                //HabilitarModificar();
             }
             else
             {
@@ -342,8 +340,12 @@ namespace DealerSystempt2.UI.Registros
 
             da2.Fill(dt);
 
-            DetalleDTG.DataSource = dt;
-            
+            foreach (DataRow item in dt.Rows)
+            {
+                DetalleDTG.Rows.Add(item["AccesorioId"].ToString(), item["Descripcion"].ToString(), item["Cantidad"].ToString(), item["Precio"].ToString(), item["Importe"].ToString());
+            }
+            //DetalleDTG.DataSource = dt;
+            CalculandoTotales();
         }
 
         private void HabilitarModificar()
@@ -357,9 +359,34 @@ namespace DealerSystempt2.UI.Registros
             Descuentotxt.Enabled = true;
             totaltxt.Enabled = true;
 
-            btnModificar.Enabled = true;
             btnEliminar.Enabled = true;
             btnInsertar.Enabled = false;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string actualizar;
+                actualizar = "EXEC sp_EliminareVentaAccesorio " + Idtxt.Text;
+                cnn.Open();
+                OleDbCommand datos = new OleDbCommand(actualizar, cnn);
+
+                datos.ExecuteNonQuery();
+                cnn.Close();
+                MessageBox.Show("Venta eliminada", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Nuevo();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Comuniquese con los desarrolladores " + ex.Message, "Error");
+                throw;
+            }
+        }
+
+        private void CancelarButton_Click(object sender, EventArgs e)
+        {
+            Cancelar();
         }
     }
 }

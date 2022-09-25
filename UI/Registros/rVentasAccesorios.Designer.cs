@@ -69,7 +69,6 @@ namespace DealerSystempt2.UI.Registros
             this.CancelarButton = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDTG)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -525,13 +524,14 @@ namespace DealerSystempt2.UI.Registros
             this.CancelarButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.CancelarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelarButton.ForeColor = System.Drawing.Color.White;
-            this.CancelarButton.Location = new System.Drawing.Point(752, 721);
+            this.CancelarButton.Location = new System.Drawing.Point(712, 721);
             this.CancelarButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CancelarButton.Name = "CancelarButton";
             this.CancelarButton.Size = new System.Drawing.Size(103, 36);
             this.CancelarButton.TabIndex = 99;
             this.CancelarButton.Text = "Cancelar";
             this.CancelarButton.UseVisualStyleBackColor = false;
+            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
             // 
             // btnEliminar
             // 
@@ -539,13 +539,14 @@ namespace DealerSystempt2.UI.Registros
             this.btnEliminar.BackColor = System.Drawing.Color.Red;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(643, 721);
+            this.btnEliminar.Location = new System.Drawing.Point(603, 721);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(103, 36);
             this.btnEliminar.TabIndex = 98;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnInsertar
             // 
@@ -553,7 +554,7 @@ namespace DealerSystempt2.UI.Registros
             this.btnInsertar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnInsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertar.ForeColor = System.Drawing.Color.White;
-            this.btnInsertar.Location = new System.Drawing.Point(445, 721);
+            this.btnInsertar.Location = new System.Drawing.Point(504, 721);
             this.btnInsertar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(91, 36);
@@ -562,27 +563,13 @@ namespace DealerSystempt2.UI.Registros
             this.btnInsertar.UseVisualStyleBackColor = false;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnModificar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(537, 721);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(104, 36);
-            this.btnModificar.TabIndex = 96;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            // 
             // btnNuevo
             // 
             this.btnNuevo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnNuevo.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(350, 721);
+            this.btnNuevo.Location = new System.Drawing.Point(409, 721);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(91, 36);
@@ -599,7 +586,6 @@ namespace DealerSystempt2.UI.Registros
             this.Controls.Add(this.CancelarButton);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnInsertar);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.totaltxt);
             this.Controls.Add(this.label13);
@@ -669,7 +655,6 @@ namespace DealerSystempt2.UI.Registros
         protected System.Windows.Forms.Button CancelarButton;
         protected System.Windows.Forms.Button btnEliminar;
         protected System.Windows.Forms.Button btnInsertar;
-        protected System.Windows.Forms.Button btnModificar;
         protected System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.DataGridViewTextBoxColumn AccesorioId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Accesorio;
