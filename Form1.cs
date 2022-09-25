@@ -65,5 +65,11 @@ namespace DealerSystempt2
             rCompras compras = new rCompras();
             compras.Show();
         }
+
+        private void comprasDeVehiculosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rComprasVehiculos cvehiculos = new rComprasVehiculos();
+            cvehiculos.Show();
+        }
     }
 }

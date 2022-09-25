@@ -382,3 +382,106 @@ CREATE PROCEDURE sp_ActualizarExistenciaAccesorio
 AS
 	UPDATE Accesorios SET Existencia = @Existencia WHERE AccesorioId = @AccesorioId
 GO
+
+ALTER TABLE dbo.Vehiculos 
+ADD Existencia int default 0
+GO
+ALTER TABLE dbo.Vehiculos  DROP COLUMN CantidadDisponible
+GO
+ALTER PROCEDURE sp_ActualizarExistenciaVehiculo
+@VehiculoId int,
+@Existencia int
+AS
+	UPDATE Vehiculos SET Existencia = @Existencia WHERE VehiculoId = @VehiculoId
+GO
+
+CREATE TABLE eComprasVehiculos
+(
+	CompraId INTEGER PRIMARY KEY IDENTITY(1,1),
+	Fecha DATETIME,
+	Tipo INT,
+	SuplidorId INTEGER FOREIGN KEY REFERENCES Suplidores(SuplidorId),
+	ITBIS decimal,
+	SubTotal decimal,
+	Descuento decimal,
+	Total decimal,
+	Balance decimal
+)
+CREATE TABLE dComprasVehiculos
+(
+	Id INTEGER PRIMARY KEY IDENTITY(1,1),
+	CompraId INTEGER FOREIGN KEY REFERENCES dbo.eComprasVehiculos(CompraId),
+	VahiculoId INTEGER FOREIGN KEY REFERENCES Vehiculos(VehiculoId),
+	Descripcion varchar(100),
+	Cantidad int,
+	Precio decimal,
+	Importe decimal
+)
+GO
+
+CREATE PROCEDURE sp_BuscareComprasVehiculos
+@CompraId INT
+AS
+	SELECT *
+	FROM dbo.eComprasVehiculos 
+	WHERE CompraId = @CompraId
+GO
+GO
+
+
+
+CREATE PROCEDURE sp_BuscardCompraVehiculos
+@CompraId INT
+AS
+	SELECT *
+	FROM dbo.dComprasVehiculos
+	WHERE CompraId = @CompraId
+GO
+GO
+
+
+
+CREATE PROCEDURE sp_InsertareCompraVehiculo
+@Fecha DATETIME, 
+@Tipo int, 
+@SuplidorId int, 
+@ITBIS decimal, 
+@SubTotal decimal,
+@Descuento decimal,
+@Total decimal,
+@Balance decimal
+AS
+	INSERT INTO dbo.eComprasVehiculos
+	VALUES (@Fecha,@Tipo,@SuplidorId,@ITBIS,@SubTotal,@Descuento,@Total,@Balance)
+GO
+GO
+
+CREATE PROCEDURE sp_InsertardComprasVehiculo
+@CompraId int, 
+@VehiculoId int, 
+@Descripcion varchar(100),
+@Cantidad int, 
+@Precio decimal, 
+@Importe decimal
+AS
+	INSERT INTO dbo.dComprasVehiculos
+	VALUES (@CompraId,@VehiculoId,@Descripcion,@Cantidad,@Precio,@Importe)
+
+	EXEC sp_ActualizarExistenciaVehiculo @VehiculoId, @Cantidad 
+GO
+GO
+
+ALTER PROCEDURE sp_EliminareComprasVehiculos
+@Id int
+AS
+	DELETE FROM dbo.eComprasVehiculos WHERE CompraId = @Id
+	EXEC sp_EliminardComprasVehiculos @Id
+GO
+GO
+
+CREATE PROCEDURE sp_EliminardComprasVehiculos
+@Id int
+AS
+	DELETE FROM dbo.dComprasVehiculos WHERE CompraId = @Id
+GO
+GO

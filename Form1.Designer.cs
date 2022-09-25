@@ -39,8 +39,9 @@ namespace DealerSystempt2
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suplidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasDeAccesoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasDeAccesoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprasDeVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,14 +55,14 @@ namespace DealerSystempt2
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // registrosToolStripMenuItem
@@ -74,9 +75,10 @@ namespace DealerSystempt2
             this.ventasToolStripMenuItem,
             this.suplidoresToolStripMenuItem,
             this.ventasDeAccesoriosToolStripMenuItem,
-            this.comprasDeAccesoriosToolStripMenuItem});
+            this.comprasDeAccesoriosToolStripMenuItem,
+            this.comprasDeVehiculosToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
-            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
+            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.registrosToolStripMenuItem.Text = "Registros";
             // 
             // usuariosToolStripMenuItem
@@ -128,18 +130,25 @@ namespace DealerSystempt2
             this.ventasDeAccesoriosToolStripMenuItem.Text = "Ventas de Accesorios";
             this.ventasDeAccesoriosToolStripMenuItem.Click += new System.EventHandler(this.ventasDeAccesoriosToolStripMenuItem_Click);
             // 
-            // consultasToolStripMenuItem
-            // 
-            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(86, 26);
-            this.consultasToolStripMenuItem.Text = "Consultas";
-            // 
             // comprasDeAccesoriosToolStripMenuItem
             // 
             this.comprasDeAccesoriosToolStripMenuItem.Name = "comprasDeAccesoriosToolStripMenuItem";
             this.comprasDeAccesoriosToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             this.comprasDeAccesoriosToolStripMenuItem.Text = "Compras de Accesorios";
             this.comprasDeAccesoriosToolStripMenuItem.Click += new System.EventHandler(this.comprasDeAccesoriosToolStripMenuItem_Click);
+            // 
+            // consultasToolStripMenuItem
+            // 
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // comprasDeVehiculosToolStripMenuItem
+            // 
+            this.comprasDeVehiculosToolStripMenuItem.Name = "comprasDeVehiculosToolStripMenuItem";
+            this.comprasDeVehiculosToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.comprasDeVehiculosToolStripMenuItem.Text = "Compras de Vehiculos";
+            this.comprasDeVehiculosToolStripMenuItem.Click += new System.EventHandler(this.comprasDeVehiculosToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -172,6 +181,7 @@ namespace DealerSystempt2
         private System.Windows.Forms.ToolStripMenuItem suplidoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasDeAccesoriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comprasDeAccesoriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem comprasDeVehiculosToolStripMenuItem;
     }
 }
 

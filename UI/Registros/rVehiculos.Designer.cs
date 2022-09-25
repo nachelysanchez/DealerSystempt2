@@ -122,8 +122,10 @@ namespace DealerSystempt2.UI.Registros
             0,
             0});
             this.cantidadnumeric.Name = "cantidadnumeric";
+            this.cantidadnumeric.ReadOnly = true;
             this.cantidadnumeric.Size = new System.Drawing.Size(242, 22);
             this.cantidadnumeric.TabIndex = 236;
+            this.cantidadnumeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.cantidadnumeric.Value = new decimal(new int[] {
             1,
             0,
@@ -380,7 +382,7 @@ namespace DealerSystempt2.UI.Registros
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label1);
             this.Name = "rVehiculos";
-            this.Text = "rVehiculos";
+            this.Text = "Registro de Vehiculos";
             this.Load += new System.EventHandler(this.rVehiculos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cantidadnumeric)).EndInit();
             this.ResumeLayout(false);
