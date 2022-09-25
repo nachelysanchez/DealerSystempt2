@@ -29,49 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.VentaIdTextBox = new System.Windows.Forms.TextBox();
-            this.BuscarButton = new System.Windows.Forms.Button();
-            this.ClienteIdTextBox = new System.Windows.Forms.TextBox();
-            this.NombreClienteTextBox = new System.Windows.Forms.TextBox();
-            this.BuscarClienteButton = new System.Windows.Forms.Button();
-            this.TipoComboBox = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.VehiculoIdTextBox = new System.Windows.Forms.TextBox();
-            this.BuscarVehiculoButton = new System.Windows.Forms.Button();
-            this.DescripcionTextBox = new System.Windows.Forms.TextBox();
-            this.CantidadTextBox = new System.Windows.Forms.TextBox();
-            this.PrecioTextBox = new System.Windows.Forms.TextBox();
-            this.ImporteTextBox = new System.Windows.Forms.TextBox();
-            this.DetalleDataGridView = new System.Windows.Forms.DataGridView();
-            this.VehiculoIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItbisColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImporteColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotalTextBox = new System.Windows.Forms.TextBox();
-            this.ITBISTextBox = new System.Windows.Forms.TextBox();
-            this.DescuentoTextBox = new System.Windows.Forms.TextBox();
-            this.TotalTextBox = new System.Windows.Forms.TextBox();
-            this.NuevoButton = new System.Windows.Forms.Button();
-            this.InsertarButton = new System.Windows.Forms.Button();
-            this.ModificarButton = new System.Windows.Forms.Button();
-            this.EliminarButton = new System.Windows.Forms.Button();
-            this.CancelarButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,23 +36,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 13.8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.label1.Location = new System.Drawing.Point(411, 32);
+            this.label1.Location = new System.Drawing.Point(430, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(240, 43);
             this.label1.TabIndex = 0;
             this.label1.Text = "Registro de ventas";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(121, 107);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 18);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Venta Id";
-            // 
-            // label3
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
@@ -134,7 +80,6 @@
             this.label6.Size = new System.Drawing.Size(48, 18);
             this.label6.TabIndex = 6;
             this.label6.Text = "ITBIS";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -145,7 +90,6 @@
             this.label7.Size = new System.Drawing.Size(89, 18);
             this.label7.TabIndex = 7;
             this.label7.Text = "Descuento";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -156,7 +100,6 @@
             this.label8.Size = new System.Drawing.Size(80, 18);
             this.label8.TabIndex = 8;
             this.label8.Text = "Sub Total";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -167,7 +110,6 @@
             this.label9.Size = new System.Drawing.Size(46, 18);
             this.label9.TabIndex = 9;
             this.label9.Text = "Total";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -403,7 +345,6 @@
             this.SubTotalTextBox.Size = new System.Drawing.Size(152, 22);
             this.SubTotalTextBox.TabIndex = 30;
             this.SubTotalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.SubTotalTextBox.TextChanged += new System.EventHandler(this.SubTotalTextBox_TextChanged);
             // 
             // ITBISTextBox
             // 
@@ -413,7 +354,6 @@
             this.ITBISTextBox.Size = new System.Drawing.Size(152, 22);
             this.ITBISTextBox.TabIndex = 31;
             this.ITBISTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ITBISTextBox.TextChanged += new System.EventHandler(this.ITBISTextBox_TextChanged);
             // 
             // DescuentoTextBox
             // 
@@ -422,7 +362,6 @@
             this.DescuentoTextBox.Size = new System.Drawing.Size(152, 22);
             this.DescuentoTextBox.TabIndex = 32;
             this.DescuentoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.DescuentoTextBox.TextChanged += new System.EventHandler(this.DescuentoTextBox_TextChanged);
             // 
             // TotalTextBox
             // 
@@ -432,7 +371,6 @@
             this.TotalTextBox.Size = new System.Drawing.Size(152, 22);
             this.TotalTextBox.TabIndex = 33;
             this.TotalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.TotalTextBox.TextChanged += new System.EventHandler(this.TotalTextBox_TextChanged);
             // 
             // NuevoButton
             // 
@@ -483,47 +421,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1141, 735);
-            this.Controls.Add(this.CancelarButton);
-            this.Controls.Add(this.EliminarButton);
-            this.Controls.Add(this.ModificarButton);
-            this.Controls.Add(this.InsertarButton);
-            this.Controls.Add(this.NuevoButton);
-            this.Controls.Add(this.TotalTextBox);
-            this.Controls.Add(this.DescuentoTextBox);
-            this.Controls.Add(this.ITBISTextBox);
-            this.Controls.Add(this.SubTotalTextBox);
-            this.Controls.Add(this.DetalleDataGridView);
-            this.Controls.Add(this.ImporteTextBox);
-            this.Controls.Add(this.PrecioTextBox);
-            this.Controls.Add(this.CantidadTextBox);
-            this.Controls.Add(this.DescripcionTextBox);
-            this.Controls.Add(this.BuscarVehiculoButton);
-            this.Controls.Add(this.VehiculoIdTextBox);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.TipoComboBox);
-            this.Controls.Add(this.BuscarClienteButton);
-            this.Controls.Add(this.NombreClienteTextBox);
-            this.Controls.Add(this.ClienteIdTextBox);
-            this.Controls.Add(this.BuscarButton);
-            this.Controls.Add(this.VentaIdTextBox);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1169, 804);
             this.Controls.Add(this.label1);
             this.Name = "rVentas";
             this.Text = "Registro de Ventas";
-            this.Load += new System.EventHandler(this.rVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -533,47 +434,5 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox VentaIdTextBox;
-        private System.Windows.Forms.Button BuscarButton;
-        private System.Windows.Forms.TextBox ClienteIdTextBox;
-        private System.Windows.Forms.TextBox NombreClienteTextBox;
-        private System.Windows.Forms.Button BuscarClienteButton;
-        private System.Windows.Forms.ComboBox TipoComboBox;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox VehiculoIdTextBox;
-        private System.Windows.Forms.Button BuscarVehiculoButton;
-        private System.Windows.Forms.TextBox DescripcionTextBox;
-        private System.Windows.Forms.TextBox CantidadTextBox;
-        private System.Windows.Forms.TextBox PrecioTextBox;
-        private System.Windows.Forms.TextBox ImporteTextBox;
-        private System.Windows.Forms.DataGridView DetalleDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VehiculoIdColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItbisColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ImporteColumn;
-        private System.Windows.Forms.TextBox SubTotalTextBox;
-        private System.Windows.Forms.TextBox ITBISTextBox;
-        private System.Windows.Forms.TextBox DescuentoTextBox;
-        private System.Windows.Forms.TextBox TotalTextBox;
-        private System.Windows.Forms.Button NuevoButton;
-        private System.Windows.Forms.Button InsertarButton;
-        private System.Windows.Forms.Button ModificarButton;
-        private System.Windows.Forms.Button EliminarButton;
-        private System.Windows.Forms.Button CancelarButton;
     }
 }

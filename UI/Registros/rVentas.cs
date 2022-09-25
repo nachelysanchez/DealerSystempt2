@@ -16,50 +16,5 @@ namespace DealerSystempt2.UI.Registros
         {
             InitializeComponent();
         }
-
-        private void rVentas_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TotalTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DescuentoTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ITBISTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SubTotalTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
