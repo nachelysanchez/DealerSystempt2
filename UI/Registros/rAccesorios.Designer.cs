@@ -44,12 +44,14 @@ namespace DealerSystempt2.UI.Registros
             this.Idtxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CancelarButton = new System.Windows.Forms.Button();
+            this.Existenciatxt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tipoCmb
             // 
             this.tipoCmb.FormattingEnabled = true;
-            this.tipoCmb.Location = new System.Drawing.Point(179, 270);
+            this.tipoCmb.Location = new System.Drawing.Point(179, 307);
             this.tipoCmb.Name = "tipoCmb";
             this.tipoCmb.Size = new System.Drawing.Size(512, 24);
             this.tipoCmb.TabIndex = 75;
@@ -62,7 +64,7 @@ namespace DealerSystempt2.UI.Registros
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(35, 271);
+            this.label5.Location = new System.Drawing.Point(35, 308);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(131, 18);
             this.label5.TabIndex = 74;
@@ -89,7 +91,7 @@ namespace DealerSystempt2.UI.Registros
             this.btnEliminar.BackColor = System.Drawing.Color.Red;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(450, 327);
+            this.btnEliminar.Location = new System.Drawing.Point(450, 364);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(103, 36);
@@ -104,7 +106,7 @@ namespace DealerSystempt2.UI.Registros
             this.btnInsertar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnInsertar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsertar.ForeColor = System.Drawing.Color.White;
-            this.btnInsertar.Location = new System.Drawing.Point(252, 327);
+            this.btnInsertar.Location = new System.Drawing.Point(252, 364);
             this.btnInsertar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInsertar.Name = "btnInsertar";
             this.btnInsertar.Size = new System.Drawing.Size(91, 36);
@@ -119,7 +121,7 @@ namespace DealerSystempt2.UI.Registros
             this.btnModificar.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(344, 327);
+            this.btnModificar.Location = new System.Drawing.Point(344, 364);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(104, 36);
@@ -134,7 +136,7 @@ namespace DealerSystempt2.UI.Registros
             this.btnNuevo.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(157, 327);
+            this.btnNuevo.Location = new System.Drawing.Point(157, 364);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(91, 36);
@@ -231,7 +233,7 @@ namespace DealerSystempt2.UI.Registros
             this.CancelarButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.CancelarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelarButton.ForeColor = System.Drawing.Color.White;
-            this.CancelarButton.Location = new System.Drawing.Point(559, 327);
+            this.CancelarButton.Location = new System.Drawing.Point(559, 364);
             this.CancelarButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CancelarButton.Name = "CancelarButton";
             this.CancelarButton.Size = new System.Drawing.Size(103, 36);
@@ -240,11 +242,39 @@ namespace DealerSystempt2.UI.Registros
             this.CancelarButton.UseVisualStyleBackColor = false;
             this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
             // 
+            // Existenciatxt
+            // 
+            this.Existenciatxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Existenciatxt.Location = new System.Drawing.Point(180, 253);
+            this.Existenciatxt.Name = "Existenciatxt";
+            this.Existenciatxt.ReadOnly = true;
+            this.Existenciatxt.Size = new System.Drawing.Size(511, 22);
+            this.Existenciatxt.TabIndex = 83;
+            this.Existenciatxt.Text = "0";
+            this.Existenciatxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(36, 254);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 18);
+            this.label6.TabIndex = 82;
+            this.label6.Text = "Existencia";
+            // 
             // rAccesorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Existenciatxt);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.CancelarButton);
             this.Controls.Add(this.tipoCmb);
             this.Controls.Add(this.label5);
@@ -285,5 +315,7 @@ namespace DealerSystempt2.UI.Registros
         private System.Windows.Forms.TextBox Idtxt;
         private System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Button CancelarButton;
+        private System.Windows.Forms.TextBox Existenciatxt;
+        private System.Windows.Forms.Label label6;
     }
 }

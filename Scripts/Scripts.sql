@@ -375,3 +375,10 @@ CREATE PROCEDURE sp_BuscardVentaAccesorio
 AS
 	SELECT * FROM dbo.dVentasAccesorios WHERE VentaId = @Id
 GO
+
+CREATE PROCEDURE sp_ActualizarExistenciaAccesorio
+@AccesorioId int,
+@Existencia int
+AS
+	UPDATE Accesorios SET Existencia = @Existencia WHERE AccesorioId = @AccesorioId
+GO

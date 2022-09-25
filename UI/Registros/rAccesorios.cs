@@ -82,6 +82,7 @@ namespace DealerSystempt2.UI.Registros
                 Nombretxt.Text = dr1["Nombre"].ToString().Trim();
                 Preciotxt.Text = dr1["Precio"].ToString().Trim();
                 tipoCmb.SelectedIndex = int.Parse(dr1["TipoId"].ToString()) - 1;
+                Existenciatxt.Text = dr1["Existencia"].ToString();
             }
             if (dr1 != null)
             {
