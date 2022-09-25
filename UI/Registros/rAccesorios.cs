@@ -17,6 +17,10 @@ namespace DealerSystempt2.UI.Registros
     {
         Connection conexion;
         OleDbConnection cnn;
+        //NACH
+        public static string svname = @"LAPTOP-TN73JHLV\SQLEXPRESS";
+        //BRIAN
+        //public string svname = @"BRIAN-PC\BRIANSQLEXPRESS";
         public rAccesorios()
         {
             InitializeComponent();
@@ -26,7 +30,7 @@ namespace DealerSystempt2.UI.Registros
             Cancelar();
 
             cnn = new OleDbConnection();
-            cnn.ConnectionString = @"PROVIDER = SQLOLEDB; Data Source = BRIAN-PC\BRIANSQLEXPRESS; Initial Catalog = DealerSystem; Integrated Security=SSPI;";
+            cnn.ConnectionString = $@"PROVIDER = SQLOLEDB; Data Source ={svname}; Initial Catalog = DealerSystem; Integrated Security=SSPI;";
 
         }
 

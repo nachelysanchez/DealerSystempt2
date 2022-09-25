@@ -38,10 +38,6 @@ namespace DealerSystempt2.UI.Registros
             this.label3 = new System.Windows.Forms.Label();
             this.tipocmb = new System.Windows.Forms.ComboBox();
             this.DetalleDTG = new System.Windows.Forms.DataGridView();
-            this.AccesorioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,25 +47,30 @@ namespace DealerSystempt2.UI.Registros
             this.ClienteIdtxt = new System.Windows.Forms.TextBox();
             this.NombreCliente = new System.Windows.Forms.TextBox();
             this.NombreAccesoriotxt = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BuscarAccesorioButton = new System.Windows.Forms.Button();
             this.AccesorioIstxt = new System.Windows.Forms.TextBox();
             this.Preciotxt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.Importetxt = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Subtotaltxt = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.itbistxt = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Descuentotxt = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.totaltxt = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.CancelarButton = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.AccesorioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Accesorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDTG)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -159,8 +160,8 @@ namespace DealerSystempt2.UI.Registros
             // 
             this.tipocmb.FormattingEnabled = true;
             this.tipocmb.Items.AddRange(new object[] {
-            "Contado",
-            "Crédito"});
+            "Crédito",
+            "Contado"});
             this.tipocmb.Location = new System.Drawing.Point(132, 186);
             this.tipocmb.Name = "tipocmb";
             this.tipocmb.Size = new System.Drawing.Size(376, 24);
@@ -168,50 +169,22 @@ namespace DealerSystempt2.UI.Registros
             // 
             // DetalleDTG
             // 
+            this.DetalleDTG.AllowUserToAddRows = false;
+            this.DetalleDTG.AllowUserToOrderColumns = true;
             this.DetalleDTG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DetalleDTG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AccesorioId,
+            this.Accesorio,
             this.Cantidad,
             this.Precio,
             this.Importe});
             this.DetalleDTG.Location = new System.Drawing.Point(17, 78);
             this.DetalleDTG.Name = "DetalleDTG";
+            this.DetalleDTG.ReadOnly = true;
             this.DetalleDTG.RowHeadersWidth = 51;
             this.DetalleDTG.RowTemplate.Height = 24;
             this.DetalleDTG.Size = new System.Drawing.Size(1021, 242);
             this.DetalleDTG.TabIndex = 81;
-            // 
-            // AccesorioId
-            // 
-            this.AccesorioId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AccesorioId.HeaderText = "Accesorio ID";
-            this.AccesorioId.MinimumWidth = 6;
-            this.AccesorioId.Name = "AccesorioId";
-            this.AccesorioId.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // Importe
-            // 
-            this.Importe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Importe.HeaderText = "Importe";
-            this.Importe.MinimumWidth = 6;
-            this.Importe.Name = "Importe";
-            this.Importe.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -220,7 +193,7 @@ namespace DealerSystempt2.UI.Registros
             this.groupBox1.Controls.Add(this.Preciotxt);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.NombreAccesoriotxt);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.BuscarAccesorioButton);
             this.groupBox1.Controls.Add(this.AccesorioIstxt);
             this.groupBox1.Controls.Add(this.Cantidadtxt);
             this.groupBox1.Controls.Add(this.label6);
@@ -268,6 +241,7 @@ namespace DealerSystempt2.UI.Registros
             this.Cantidadtxt.Name = "Cantidadtxt";
             this.Cantidadtxt.Size = new System.Drawing.Size(90, 22);
             this.Cantidadtxt.TabIndex = 85;
+            this.Cantidadtxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Cantidadtxt_KeyDown);
             // 
             // label7
             // 
@@ -295,6 +269,7 @@ namespace DealerSystempt2.UI.Registros
             this.BuscarClienteButton.TabIndex = 85;
             this.BuscarClienteButton.Text = "Buscar";
             this.BuscarClienteButton.UseVisualStyleBackColor = false;
+            this.BuscarClienteButton.Click += new System.EventHandler(this.BuscarClienteButton_Click);
             // 
             // ClienteIdtxt
             // 
@@ -328,19 +303,20 @@ namespace DealerSystempt2.UI.Registros
             this.NombreAccesoriotxt.Size = new System.Drawing.Size(181, 22);
             this.NombreAccesoriotxt.TabIndex = 89;
             // 
-            // button1
+            // BuscarAccesorioButton
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(194, 37);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 36);
-            this.button1.TabIndex = 88;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BuscarAccesorioButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BuscarAccesorioButton.BackColor = System.Drawing.Color.Silver;
+            this.BuscarAccesorioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuscarAccesorioButton.ForeColor = System.Drawing.Color.White;
+            this.BuscarAccesorioButton.Location = new System.Drawing.Point(194, 37);
+            this.BuscarAccesorioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BuscarAccesorioButton.Name = "BuscarAccesorioButton";
+            this.BuscarAccesorioButton.Size = new System.Drawing.Size(91, 36);
+            this.BuscarAccesorioButton.TabIndex = 88;
+            this.BuscarAccesorioButton.Text = "Buscar";
+            this.BuscarAccesorioButton.UseVisualStyleBackColor = false;
+            this.BuscarAccesorioButton.Click += new System.EventHandler(this.BuscarAccesorioButton_Click);
             // 
             // AccesorioIstxt
             // 
@@ -401,16 +377,17 @@ namespace DealerSystempt2.UI.Registros
             this.label9.TabIndex = 92;
             this.label9.Text = "Importe";
             // 
-            // textBox1
+            // Subtotaltxt
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Subtotaltxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(917, 591);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 22);
-            this.textBox1.TabIndex = 88;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Subtotaltxt.Location = new System.Drawing.Point(917, 591);
+            this.Subtotaltxt.Name = "Subtotaltxt";
+            this.Subtotaltxt.ReadOnly = true;
+            this.Subtotaltxt.Size = new System.Drawing.Size(172, 22);
+            this.Subtotaltxt.TabIndex = 88;
+            this.Subtotaltxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label10
             // 
@@ -425,16 +402,17 @@ namespace DealerSystempt2.UI.Registros
             this.label10.TabIndex = 87;
             this.label10.Text = "SubTotal";
             // 
-            // textBox2
+            // itbistxt
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.itbistxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(917, 619);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 22);
-            this.textBox2.TabIndex = 90;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.itbistxt.Location = new System.Drawing.Point(917, 619);
+            this.itbistxt.Name = "itbistxt";
+            this.itbistxt.ReadOnly = true;
+            this.itbistxt.Size = new System.Drawing.Size(172, 22);
+            this.itbistxt.TabIndex = 90;
+            this.itbistxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
             // 
@@ -449,16 +427,18 @@ namespace DealerSystempt2.UI.Registros
             this.label11.TabIndex = 89;
             this.label11.Text = "ITBIS";
             // 
-            // textBox3
+            // Descuentotxt
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Descuentotxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(917, 647);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 22);
-            this.textBox3.TabIndex = 92;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Descuentotxt.Location = new System.Drawing.Point(917, 647);
+            this.Descuentotxt.Name = "Descuentotxt";
+            this.Descuentotxt.Size = new System.Drawing.Size(172, 22);
+            this.Descuentotxt.TabIndex = 92;
+            this.Descuentotxt.Text = "0.00";
+            this.Descuentotxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Descuentotxt.TextChanged += new System.EventHandler(this.Descuentotxt_TextChanged);
             // 
             // label12
             // 
@@ -473,16 +453,17 @@ namespace DealerSystempt2.UI.Registros
             this.label12.TabIndex = 91;
             this.label12.Text = "Descuento";
             // 
-            // textBox4
+            // totaltxt
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.totaltxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(917, 675);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(172, 22);
-            this.textBox4.TabIndex = 94;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.totaltxt.Location = new System.Drawing.Point(917, 675);
+            this.totaltxt.Name = "totaltxt";
+            this.totaltxt.ReadOnly = true;
+            this.totaltxt.Size = new System.Drawing.Size(172, 22);
+            this.totaltxt.TabIndex = 94;
+            this.totaltxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label13
             // 
@@ -538,6 +519,7 @@ namespace DealerSystempt2.UI.Registros
             this.btnInsertar.TabIndex = 97;
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = false;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
             // 
             // btnModificar
             // 
@@ -566,6 +548,47 @@ namespace DealerSystempt2.UI.Registros
             this.btnNuevo.TabIndex = 95;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // AccesorioId
+            // 
+            this.AccesorioId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AccesorioId.HeaderText = "Accesorio ID";
+            this.AccesorioId.MinimumWidth = 6;
+            this.AccesorioId.Name = "AccesorioId";
+            this.AccesorioId.ReadOnly = true;
+            // 
+            // Accesorio
+            // 
+            this.Accesorio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Accesorio.HeaderText = "Accesorio";
+            this.Accesorio.MinimumWidth = 6;
+            this.Accesorio.Name = "Accesorio";
+            this.Accesorio.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // Importe
+            // 
+            this.Importe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Importe.HeaderText = "Importe";
+            this.Importe.MinimumWidth = 6;
+            this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
             // 
             // rVentasAccesorios
             // 
@@ -577,13 +600,13 @@ namespace DealerSystempt2.UI.Registros
             this.Controls.Add(this.btnInsertar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.totaltxt);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.Descuentotxt);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.itbistxt);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Subtotaltxt);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.NombreCliente);
             this.Controls.Add(this.BuscarClienteButton);
@@ -619,10 +642,6 @@ namespace DealerSystempt2.UI.Registros
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox tipocmb;
         private System.Windows.Forms.DataGridView DetalleDTG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AccesorioId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox Cantidadtxt;
         private System.Windows.Forms.Label label6;
@@ -632,24 +651,29 @@ namespace DealerSystempt2.UI.Registros
         private System.Windows.Forms.TextBox ClienteIdtxt;
         private System.Windows.Forms.TextBox NombreCliente;
         private System.Windows.Forms.TextBox NombreAccesoriotxt;
-        protected System.Windows.Forms.Button button1;
+        protected System.Windows.Forms.Button BuscarAccesorioButton;
         private System.Windows.Forms.TextBox AccesorioIstxt;
         private System.Windows.Forms.TextBox Preciotxt;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox Importetxt;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Subtotaltxt;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox itbistxt;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Descuentotxt;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox totaltxt;
         private System.Windows.Forms.Label label13;
         protected System.Windows.Forms.Button CancelarButton;
         protected System.Windows.Forms.Button btnEliminar;
         protected System.Windows.Forms.Button btnInsertar;
         protected System.Windows.Forms.Button btnModificar;
         protected System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AccesorioId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Accesorio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
     }
 }

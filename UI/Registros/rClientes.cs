@@ -17,14 +17,18 @@ namespace DealerSystempt2.UI.Registros
     {
         Connection conexion;
         OleDbConnection cnn;
+        //NACH
+        public static string svname = @"LAPTOP-TN73JHLV\SQLEXPRESS";
+        //BRIAN
+        //public string svname = @"BRIAN-PC\BRIANSQLEXPRESS";
         public rClientes()
         {
             InitializeComponent();
             MaximizeBox = false;
             conexion = new Connection();
             cnn = new OleDbConnection();
-            cnn.ConnectionString = @"PROVIDER = SQLOLEDB; Data Source = BRIAN-PC\BRIANSQLEXPRESS; Initial Catalog = DealerSystem; Integrated Security=SSPI;";
-
+            cnn.ConnectionString = $@"PROVIDER = SQLOLEDB; Data Source = {svname}; Initial Catalog = DealerSystem; Integrated Security=SSPI;";
+            Cancelar();
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
@@ -48,7 +52,7 @@ namespace DealerSystempt2.UI.Registros
             if (dr1 != null)
             {
                 dr1.Close();
-                //HabilitarModificar();
+                HabilitarModificar();
             }
         }
 
@@ -77,6 +81,7 @@ namespace DealerSystempt2.UI.Registros
                 throw;
             }
         }
+        
 
         private void InsertarButton_Click(object sender, EventArgs e)
         {
@@ -128,7 +133,22 @@ namespace DealerSystempt2.UI.Registros
 
         private void CancelarButton_Click(object sender, EventArgs e)
         {
-            Nuevo();
+            Cancelar();
+        }
+
+        private void Cancelar()
+        {
+            ClienteIdTextBox.Enabled = true;
+            ClienteIdTextBox.ReadOnly = false;
+            NombresTextBox.Enabled = false;
+            ApellidosTextBox.Enabled = false;
+            CedulaTextBox.Enabled = false;
+            TelefonoTextBox.Enabled = false;
+            CelularTextBox.Enabled = false;
+            OcupacionTextBox.Enabled = false;
+            EliminarButton.Enabled = false;
+            InsertarButton.Enabled = false;
+            ModificarButton.Enabled = false;
         }
 
         private void Nuevo()
@@ -141,6 +161,32 @@ namespace DealerSystempt2.UI.Registros
             TelefonoTextBox.Clear();
             CelularTextBox.Clear();
             OcupacionTextBox.Clear();
+
+            ClienteIdTextBox.Enabled = false;
+            NombresTextBox.Enabled = true;
+            ApellidosTextBox.Enabled = true;
+            CedulaTextBox.Enabled = true;
+            TelefonoTextBox.Enabled = true;
+            CelularTextBox.Enabled = true;
+            OcupacionTextBox.Enabled = true;
+
+
+            ModificarButton.Enabled = false;
+            InsertarButton.Enabled = true;
+        }
+
+        private void HabilitarModificar()
+        {
+            ClienteIdTextBox.Enabled = false;
+            NombresTextBox.Enabled = true;
+            ApellidosTextBox.Enabled = true;
+            CedulaTextBox.Enabled = true;
+            TelefonoTextBox.Enabled = true;
+            CelularTextBox.Enabled = true;
+            OcupacionTextBox.Enabled = true;
+            ModificarButton.Enabled = true;
+            InsertarButton.Enabled = false;
+            EliminarButton.Enabled = true;
         }
 
         private bool Validar()
