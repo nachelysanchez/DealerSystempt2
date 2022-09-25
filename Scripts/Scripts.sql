@@ -485,3 +485,168 @@ AS
 	DELETE FROM dbo.dComprasVehiculos WHERE CompraId = @Id
 GO
 GO
+
+CREATE TABLE eComprasVehiculos
+(
+	CompraId INTEGER PRIMARY KEY IDENTITY(1,1),
+	Fecha DATETIME,
+	Tipo INT,
+	SuplidorId INTEGER FOREIGN KEY REFERENCES Suplidores(SuplidorId),
+	ITBIS decimal,
+	SubTotal decimal,
+	Descuento decimal,
+	Total decimal,
+	Balance decimal
+)
+DROP TABLE dComprasAccesorios
+SELECT * FROM dComprasVehiculos
+CREATE TABLE dComprasVehiculos
+(
+	Id INTEGER PRIMARY KEY IDENTITY(1,1),
+	CompraId INTEGER FOREIGN KEY REFERENCES dbo.eComprasVehiculos(CompraId),
+	VahiculoId INTEGER FOREIGN KEY REFERENCES Vehiculos(VehiculoId),
+	Descripcion varchar(100),
+	Cantidad int,
+	Precio decimal,
+	Importe decimal
+)
+
+ALTER TABLE dbo.Vehiculos 
+ADD Existencia int default 0
+
+ALTER TABLE dbo.Vehiculos  DROP COLUMN CantidadDisponible
+
+
+go
+CREATE PROCEDURE sp_InsertareVentaAccesorio
+@ClienteId int, 
+@Tipo int, 
+@Fecha varchar(100), 
+@Subtotal money, 
+@Itbis money, 
+@Descuento money, 
+@Total money
+AS
+	INSERT INTO dbo.eVentasAccesorios 
+	VALUES (@ClienteId, @Tipo, @Fecha, @Subtotal, @Itbis, @Descuento, @Total)
+
+GO
+
+CREATE PROCEDURE sp_ActualizarExistenciaVehiculoInsertVenta
+@VehiculoId int,
+@Existencia int
+AS
+	DECLARE @Cantidad int 
+	SELECT @Cantidad = Existencia FROM Vehiculos WHERE VehiculoId = @VehiculoId
+	UPDATE Vehiculos SET Existencia = (@Cantidad + @Existencia) WHERE VehiculoId = @VehiculoId
+GO
+
+ALTER PROCEDURE sp_ActualizarExistenciaAccesoriosInsertVenta
+@AccesorioId int,
+@Existencia int
+AS
+	DECLARE @Cantidad int 
+	SELECT @Cantidad = Existencia FROM Accesorios WHERE AccesorioId = @AccesorioId
+	UPDATE Accesorios SET Existencia = (@Cantidad - @Existencia) WHERE AccesorioId = @AccesorioId
+GO
+
+ALTER PROCEDURE sp_InsertardVentaAccesorio
+@VentaId int, 
+@AccesorioId int, 
+@Descripcion varchar(100), 
+@Cantidad int, 
+@Precio money, 
+@Importe money
+AS
+	INSERT INTO dbo.dVentasAccesorios 
+	VALUES (@VentaId, @AccesorioId, @Descripcion, @Cantidad, @Precio, @Importe)
+
+	EXEC sp_ActualizarExistenciaAccesoriosInsertVenta @AccesorioId, @Cantidad
+GO
+
+ALTER PROCEDURE sp_EliminardVentaAccesorio
+@Id int
+AS
+	DECLARE @Cantidad int 
+	SELECT @Cantidad = COUNT(VentaId) FROM dVentasAccesorios WHERE VentaId = @Id
+
+	WHILE (@Cantidad != 0)
+	BEGIN
+		DECLARE @Accesorio int, @Existencia int
+		SELECT @Accesorio = AccesorioId  FROM dVentasAccesorios WHERE VentaId = @Id
+		SELECT @Existencia = Cantidad FROM dVentasAccesorios WHERE VentaId = @Id
+		EXEC sp_ActualizarExistenciaAccesoriosDeleteVenta @Accesorio, @Existencia
+		SET @Cantidad = @Cantidad - 1
+	END
+
+	DELETE FROM dbo.dVentasAccesorios WHERE VentaId = @Id
+	
+GO
+
+ALTER PROCEDURE sp_ActualizarExistenciaAccesoriosDeleteVenta
+@AccesorioId int,
+@Existencia int
+AS
+	DECLARE @Cantidad int 
+	SELECT @Cantidad = Existencia FROM Accesorios WHERE AccesorioId = @AccesorioId
+	UPDATE Accesorios SET Existencia = (@Cantidad + @Existencia) WHERE AccesorioId = @AccesorioId
+GO
+
+ALTER PROCEDURE [dbo].[sp_EliminareVentaAccesorio]
+@Id int
+AS
+	EXEC sp_EliminardVentaAccesorio @Id
+	DELETE FROM dbo.eVentasAccesorios WHERE VentaId = @Id
+GO
+
+create PROCEDURE sp_ActualizarExistenciaVehiculoDeleteVenta
+@VehiculoId int,
+@Existencia int
+AS
+	DECLARE @Cantidad int 
+	SELECT @Cantidad = Existencia FROM Vehiculos WHERE VehiculoId = @VehiculoId
+	UPDATE Vehiculos SET Existencia = (@Cantidad + @Existencia) WHERE VehiculoId = @VehiculoId
+GO
+
+ALTER PROCEDURE [dbo].[sp_EliminarDVentas]
+@Id int
+AS
+	DECLARE @Cantidad int 
+	SELECT @Cantidad = COUNT(VentaId) FROM dVentas WHERE VentaId = @Id
+
+	WHILE (@Cantidad != 0)
+	BEGIN
+		DECLARE @Accesorio int, @Existencia int
+		SELECT @Accesorio = VehiculoId FROM dVentas WHERE VentaId = @Id
+		SELECT @Existencia = Cantidad FROM dVentas WHERE VentaId = @Id
+		EXEC sp_ActualizarExistenciaVehiculoDeleteVenta @Accesorio, @Existencia
+		SET @Cantidad = @Cantidad - 1
+	END
+
+	DELETE FROM dbo.dVentas WHERE VentaId = @Id
+GO
+
+ALTER PROCEDURE sp_ActualizarExistenciaVehiculoInsertVenta
+@VehiculoId int,
+@Existencia int
+AS
+	DECLARE @Cantidad int 
+	SELECT @Cantidad = Existencia FROM Vehiculos WHERE VehiculoId = @VehiculoId
+	UPDATE Vehiculos SET Existencia = (@Cantidad - @Existencia) WHERE VehiculoId = @VehiculoId
+GO
+
+
+ALTER PROCEDURE [dbo].[sp_InsertarDVenta]
+@VentaId int, 
+@VehiculoId int, 
+@Cantidad decimal, 
+@Precio decimal, 
+@ITBIS decimal, 
+@Importe decimal
+AS
+	INSERT INTO dbo.dVentas(VentaId,VehiculoId,Cantidad,Precio,ITBIS,Importe) 
+	VALUES (@VentaId,@VehiculoId,@Cantidad,@Precio,@ITBIS,@Importe)
+
+	EXEC sp_ActualizarExistenciaVehiculoInsertVenta @VehiculoId, @Cantidad
+GO
+
