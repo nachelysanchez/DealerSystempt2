@@ -19,6 +19,7 @@ namespace DealerSystempt2.UI.Registros
         public static float itbis = 0;
         public static float descuento = 0;
         public static float total = 0;
+        public static float cantidad = 0;
 
         Connection conexion;
         OleDbConnection cnn;
@@ -82,6 +83,7 @@ namespace DealerSystempt2.UI.Registros
             Cantidadtxt.Enabled = true;
             btnEliminar.Enabled = false;
             btnInsertar.Enabled = true;
+            DetalleDTG.Rows.Clear();
         }
 
         private void Cantidadtxt_KeyDown(object sender, KeyEventArgs e)
@@ -92,9 +94,17 @@ namespace DealerSystempt2.UI.Registros
                 {
                     return;
                 }
-                DetalleDTG.Rows.Add(AccesorioIstxt.Text, NombreAccesoriotxt.Text, Cantidadtxt.Text, Preciotxt.Text, (float.Parse(Preciotxt.Text) * int.Parse(Cantidadtxt.Text)).ToString("N2"));
-                CalculandoTotales();
-                LimpiarDetalle();
+                if(cantidad < int.Parse(Cantidadtxt.Text))
+                {
+                    MessageBox.Show("No puede vender más de la cantidad existente\n\n Este accesorio tiene "+cantidad+ " unidades disponibles","Error",MessageBoxButtons.OK);
+                }
+                else
+                {
+                    DetalleDTG.Rows.Add(AccesorioIstxt.Text, NombreAccesoriotxt.Text, Cantidadtxt.Text, Preciotxt.Text, (float.Parse(Preciotxt.Text) * int.Parse(Cantidadtxt.Text)).ToString("N2"));
+                    CalculandoTotales();
+                    LimpiarDetalle();
+                }
+                
             }
         }
 
@@ -141,25 +151,41 @@ namespace DealerSystempt2.UI.Registros
         {
             string query = "SELECT * FROM dbo.Accesorios WHERE AccesorioId = " + AccesorioIstxt.Text;
             SqlDataAdapter da1 = new SqlDataAdapter(query, conexion.Conectar());
-
-            SqlDataReader dr1 = da1.SelectCommand.ExecuteReader();
-            if (dr1.HasRows != false)
+            
+            SqlDataReader dr2 = da1.SelectCommand.ExecuteReader();
+            if (dr2.HasRows != false)
             { 
-                while (dr1.Read())
+                while (dr2.Read())
                 {
-                    NombreAccesoriotxt.Text = AccesorioIstxt.Text+ "-" + dr1["Nombre"].ToString().Trim();
-                    Preciotxt.Text = dr1["Precio"].ToString().Trim();
+                    cantidad = int.Parse(dr2["Existencia"].ToString());
+                    if(cantidad > 0)
+                    {
+                        NombreAccesoriotxt.Text = AccesorioIstxt.Text+ "-" + dr2["Nombre"].ToString().Trim();
+                        Preciotxt.Text = dr2["Precio"].ToString().Trim();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No puede vender este accesorio. No tiene existencia","Error",  MessageBoxButtons.OK);
+                        dr2.Close();
+                        return;
+                    }
+
+                    
+
                     //Importetxt.Text = (float.Parse(Preciotxt.Text)* float.Parse(Cantidadtxt.Text)).ToString();
                 }
-                if (dr1 != null)
-                {
-                    dr1.Close();
-                }
+                dr2.Close();
+                dr2.Dispose();
+                //if (dr1 != null)
+                //{
+                //    dr1.Close();
+                //}
             }
             else
             {
                 MessageBox.Show("Accesorio no encontrado", "Busqueda", MessageBoxButtons.OK);
-                dr1.Close();
+                dr2.Close();
+                dr2.Dispose();
             }
                 
         }
@@ -214,7 +240,7 @@ namespace DealerSystempt2.UI.Registros
                     return;
                 string inserpart;
 
-                inserpart = $"EXEC sp_InsertareVentaAccesorio {ClienteIdtxt.Text}, {tipocmb.SelectedIndex +1}, '{FechaDatePicker.Value.ToString("dd/MM/yyyy")}', {subtotal}, {itbis}, {descuento}, {total}";
+                inserpart = $"EXEC sp_InsertareVentaAccesorio {ClienteIdtxt.Text}, {tipocmb.SelectedIndex +1}, '{FechaDatePicker.Value.ToShortDateString()}', {subtotal}, {itbis}, {descuento}, {total}";
                 SqlCommand insert1 = new SqlCommand(inserpart, conexion.Conectar());
 
 
@@ -346,6 +372,7 @@ namespace DealerSystempt2.UI.Registros
             }
             //DetalleDTG.DataSource = dt;
             CalculandoTotales();
+            btnEliminar.Enabled = true;
         }
 
         private void HabilitarModificar()

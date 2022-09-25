@@ -67,6 +67,12 @@
     <Compile Include="UI\Registros\rClientes.Designer.cs">
       <DependentUpon>rClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\rCobros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rCobros.Designer.cs">
+      <DependentUpon>rCobros.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rCompras.cs">
       <SubType>Form</SubType>
     </Compile>

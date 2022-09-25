@@ -17,6 +17,7 @@ namespace DealerSystempt2.UI.Registros
     {
         Connection conexion;
         OleDbConnection cnn;
+        public static float cantidad = 0;
         public rVentas()
         {
             InitializeComponent();
@@ -81,13 +82,20 @@ namespace DealerSystempt2.UI.Registros
                     double SubTotal = (Cantidad * Precio);
                     double ITBIS =  SubTotal * 0.18;
                     double Importe = SubTotal + ITBIS;
+                    if (cantidad < int.Parse(Cantidadtxt.Text))
+                    {
+                        MessageBox.Show("No puede vender más de la cantidad existente\n\n Este accesorio tiene " + cantidad + " unidades disponibles", "Error", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
 
-                    DetalleDTG.Rows.Add(VehiculoIdtxt.Text,Descripciontxt.Text, Cantidad.ToString("N2"), Precio.ToString("N2"), ITBIS.ToString("N2"), Importe.ToString("N2"));
+                        DetalleDTG.Rows.Add(VehiculoIdtxt.Text,Descripciontxt.Text, Cantidad.ToString("N2"), Precio.ToString("N2"), ITBIS.ToString("N2"), Importe.ToString("N2"));
 
-                    SubTotaltxt.Text = (ConvertToDouble(SubTotaltxt.Text) + SubTotal).ToString("N2");
-                    ITBIStxt.Text = (ConvertToDouble(ITBIStxt.Text) + ITBIS).ToString("N2");
-                    Totaltxt.Text = (ConvertToDouble(SubTotaltxt.Text) + ConvertToDouble(ITBIStxt.Text)).ToString("N2");
+                        SubTotaltxt.Text = (ConvertToDouble(SubTotaltxt.Text) + SubTotal).ToString("N2");
+                        ITBIStxt.Text = (ConvertToDouble(ITBIStxt.Text) + ITBIS).ToString("N2");
+                        Totaltxt.Text = (ConvertToDouble(SubTotaltxt.Text) + ConvertToDouble(ITBIStxt.Text)).ToString("N2");
 
+                    }
                     VehiculoIdtxt.Clear();
                     Descripciontxt.Clear();
                     Cantidadtxt.Clear();
@@ -181,9 +189,19 @@ namespace DealerSystempt2.UI.Registros
             {
                 while (dr1.Read())
                 {
-                    VehiculoIdtxt.Text = dr1["VehiculoId"].ToString();
-                    Descripciontxt.Text = dr1["Modelo"].ToString();
-                    Preciotxt.Text = dr1["Precio"].ToString();
+                    cantidad = int.Parse(dr1["Existencia"].ToString());
+                    if (cantidad > 0)
+                    {
+                        VehiculoIdtxt.Text = dr1["VehiculoId"].ToString();
+                        Descripciontxt.Text = dr1["Modelo"].ToString();
+                        Preciotxt.Text = dr1["Precio"].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No puede vender este vehiculo. No tiene existencia", "Error", MessageBoxButtons.OK);
+                        dr1.Close();
+                        return;
+                    }
                 }
             }
             else
