@@ -32,7 +32,6 @@
             this.CancelarButton = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnInsertar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -93,13 +92,14 @@
             this.CancelarButton.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.CancelarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelarButton.ForeColor = System.Drawing.Color.White;
-            this.CancelarButton.Location = new System.Drawing.Point(775, 709);
+            this.CancelarButton.Location = new System.Drawing.Point(674, 709);
             this.CancelarButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CancelarButton.Name = "CancelarButton";
             this.CancelarButton.Size = new System.Drawing.Size(103, 36);
             this.CancelarButton.TabIndex = 125;
             this.CancelarButton.Text = "Cancelar";
             this.CancelarButton.UseVisualStyleBackColor = false;
+            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
             // 
             // btnEliminar
             // 
@@ -107,13 +107,14 @@
             this.btnEliminar.BackColor = System.Drawing.Color.Red;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(666, 709);
+            this.btnEliminar.Location = new System.Drawing.Point(565, 709);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(103, 36);
             this.btnEliminar.TabIndex = 124;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnInsertar
             // 
@@ -129,20 +130,6 @@
             this.btnInsertar.Text = "Insertar";
             this.btnInsertar.UseVisualStyleBackColor = false;
             this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnModificar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(560, 709);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(104, 36);
-            this.btnModificar.TabIndex = 122;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = false;
             // 
             // btnNuevo
             // 
@@ -527,6 +514,7 @@
             this.btnBuscar.TabIndex = 103;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // Idtxt
             // 
@@ -620,7 +608,6 @@
             this.Controls.Add(this.CancelarButton);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnInsertar);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -655,7 +642,6 @@
         protected System.Windows.Forms.Button CancelarButton;
         protected System.Windows.Forms.Button btnEliminar;
         protected System.Windows.Forms.Button btnInsertar;
-        protected System.Windows.Forms.Button btnModificar;
         protected System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;

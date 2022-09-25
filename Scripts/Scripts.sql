@@ -199,3 +199,97 @@ CREATE PROCEDURE sp_BuscareVentaAccesorio
 AS
 	SELECT * FROM dbo.eVentasAccesorios WHERE VentaId = @Id
 GO
+
+--Brian Jimenez 25/09/2022
+
+CREATE TABLE eVentas
+(
+	VentaId INTEGER PRIMARY KEY IDENTITY(1,1),
+	Fecha DATETIME,
+	Tipo INT,
+	ClienteId INTEGER FOREIGN KEY REFERENCES Clientes(ClienteId),
+	ITBIS decimal,
+	SubTotal decimal,
+	Descuento decimal,
+	Total decimal,
+	Balance decimal
+);
+
+CREATE TABLE dVentas
+(
+	Id INTEGER PRIMARY KEY IDENTITY(1,1),
+	VentaId INTEGER FOREIGN KEY REFERENCES eVentas(VentaId),
+	VehiculoId INTEGER FOREIGN KEY REFERENCES Vehiculos(VehiculoId),
+	Cantidad decimal,
+	Precio decimal,
+	ITBIS decimal,
+	Importe decimal
+);
+
+
+CREATE PROCEDURE sp_BuscarEVenta
+@VentaId INT
+AS
+	SELECT eV.VentaId,eV.Fecha,eV.Tipo,eV.ClienteId,c.Nombres +' '+ c.Apellidos AS NombreCompleto,eV.ITBIS,eV.SubTotal,eV.Descuento,eV.Total,eV.Balance
+	FROM dbo.eVentas eV
+	INNER JOIN Clientes c ON eV.ClienteId = c.ClienteId
+	WHERE eV.VentaId = @VentaId
+GO
+GO
+
+
+ALTER PROCEDURE sp_BuscarDVenta
+@VentaId INT
+AS
+	SELECT dV.VehiculoId,v.Modelo as Descripcion,dV.Cantidad,dV.Precio,dV.ITBIS,dV.Importe
+	FROM dbo.dVentas dV
+	INNER JOIN Vehiculos v ON dV.VehiculoId = v.VehiculoId
+	WHERE dV.VentaId = @VentaId
+GO
+GO
+
+
+
+CREATE PROCEDURE sp_InsertarEVenta
+@Fecha DATETIME, 
+@Tipo int, 
+@ClienteId int, 
+@ITBIS decimal, 
+@SubTotal decimal,
+@Descuento decimal,
+@Total decimal,
+@Balance decimal
+AS
+	INSERT INTO dbo.eVentas(Fecha,Tipo,ClienteId,ITBIS,SubTotal,Descuento,Total,Balance) 
+	VALUES (@Fecha,@Tipo,@ClienteId,@ITBIS,@SubTotal,@Descuento,@Total,@Balance)
+GO
+GO
+
+CREATE PROCEDURE sp_InsertarDVenta
+@VentaId int, 
+@VehiculoId int, 
+@Cantidad decimal, 
+@Precio decimal, 
+@ITBIS decimal, 
+@Importe decimal
+AS
+	INSERT INTO dbo.dVentas(VentaId,VehiculoId,Cantidad,Precio,ITBIS,Importe) 
+	VALUES (@VentaId,@VehiculoId,@Cantidad,@Precio,@ITBIS,@Importe)
+GO
+GO
+
+
+ALTER PROCEDURE sp_EliminarEVentas
+@Id int
+AS
+	DELETE FROM dbo.eVentas WHERE VentaId = @Id
+	EXEC sp_EliminarDVentas @Id
+GO
+GO
+
+CREATE PROCEDURE sp_EliminarDVentas
+@Id int
+AS
+	DELETE FROM dbo.dVentas WHERE VentaId = @Id
+GO
+GO
