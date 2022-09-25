@@ -16,5 +16,10 @@ namespace DealerSystempt2.UI.Registros
         {
             InitializeComponent();
         }
+
+        private void rCobros_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

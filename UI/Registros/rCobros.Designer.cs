@@ -38,6 +38,7 @@ namespace DealerSystempt2.UI.Registros
             this.ClientSize = new System.Drawing.Size(1120, 682);
             this.Name = "rCobros";
             this.Text = "Registro de Cobros";
+            this.Load += new System.EventHandler(this.rCobros_Load);
             this.ResumeLayout(false);
 
         }
