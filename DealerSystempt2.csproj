@@ -53,8 +53,32 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Guias\Nachely\Clase1\Empleados.cs" />
+    <Compile Include="Guias\Nachely\Clase1\rEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase1\rEmpleado.Designer.cs">
+      <DependentUpon>rEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Ejemplo1\Calculadora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Ejemplo1\Calculadora.Designer.cs">
+      <DependentUpon>Calculadora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Multiplicar.cs" />
+    <Compile Include="Guias\Nachely\Clase2\Operacion.cs" />
+    <Compile Include="Guias\Nachely\Clase2\Restar.cs" />
+    <Compile Include="Guias\Nachely\Clase2\Sumar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tareas\Nachely\Tarea1\claUAPA.cs" />
+    <Compile Include="Tareas\Nachely\Tarea1\rFacilitador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea1\rFacilitador.Designer.cs">
+      <DependentUpon>rFacilitador.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultas\cAccesorios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +196,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Guias\Nachely\Clase1\rEmpleado.resx">
+      <DependentUpon>rEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guias\Nachely\Clase2\Ejemplo1\Calculadora.resx">
+      <DependentUpon>Calculadora.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -182,6 +212,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea1\rFacilitador.resx">
+      <DependentUpon>rFacilitador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cAccesorios.resx">
       <DependentUpon>cAccesorios.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,7 +286,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Tareas\Nachely\" />
+    <Folder Include="Guias\Nachely\Clase2\Ejemplo2\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login.jpg" />

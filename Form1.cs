@@ -1,4 +1,7 @@
-﻿using DealerSystempt2.UI.Consultas;
+﻿using DealerSystempt2.Guias.Nachely.Clase1;
+using DealerSystempt2.Guias.Nachely.Clase2.Ejemplo1;
+using DealerSystempt2.Tareas.Nachely.Tarea1;
+using DealerSystempt2.UI.Consultas;
 using DealerSystempt2.UI.Login;
 using DealerSystempt2.UI.Registros;
 using System;
@@ -177,6 +180,26 @@ namespace DealerSystempt2
                 new Login().Show();
                 this.Close();
             }
+        }
+
+        
+
+        private void tarea1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rFacilitador fa = new rFacilitador();
+            fa.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            rEmpleado em = new rEmpleado();
+            em.Show();
+        }
+
+        private void ejemplo1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Calculadora cal = new Calculadora();
+            cal.Show();
         }
     }
 }
