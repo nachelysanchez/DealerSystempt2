@@ -1,4 +1,6 @@
-﻿using DealerSystempt2.Conexion;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using DealerSystempt2.Conexion;
+using DealerSystempt2.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,6 +54,14 @@ namespace DealerSystempt2.UI.Consultas
             {
                 ConsultaDTG.Rows.Add(dr["VentaId"].ToString(), dr["Fecha"].ToString(), dr["Tipo"].ToString(), dr["Total"].ToString());
             }
+        }
+
+        private void Imprimirbtn_Click(object sender, EventArgs e)
+        {
+            ReportDocument reportDocument = new ReportDocument();
+            reportDocument.Load(@"C:\Users\jimen\source\repos\DealerSystempt2\UI\Reportes\ListadoVentas.rpt");
+            ImprimirReportes reporte = new ImprimirReportes(reportDocument);
+            reporte.Show();
         }
     }
 }

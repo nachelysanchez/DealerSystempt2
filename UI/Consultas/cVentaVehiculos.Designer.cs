@@ -40,6 +40,7 @@ namespace DealerSystempt2.UI.Consultas
             this.filtrocmb = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.Imprimirbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDTG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,12 +54,13 @@ namespace DealerSystempt2.UI.Consultas
             this.Fecha,
             this.Tipo,
             this.Total});
-            this.ConsultaDTG.Location = new System.Drawing.Point(26, 141);
+            this.ConsultaDTG.Location = new System.Drawing.Point(20, 115);
+            this.ConsultaDTG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ConsultaDTG.Name = "ConsultaDTG";
             this.ConsultaDTG.ReadOnly = true;
             this.ConsultaDTG.RowHeadersWidth = 51;
             this.ConsultaDTG.RowTemplate.Height = 24;
-            this.ConsultaDTG.Size = new System.Drawing.Size(827, 311);
+            this.ConsultaDTG.Size = new System.Drawing.Size(620, 253);
             this.ConsultaDTG.TabIndex = 135;
             // 
             // VentaId
@@ -99,10 +101,10 @@ namespace DealerSystempt2.UI.Consultas
             this.btnBuscar.BackColor = System.Drawing.Color.Salmon;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(703, 73);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscar.Location = new System.Drawing.Point(527, 59);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(91, 36);
+            this.btnBuscar.Size = new System.Drawing.Size(68, 29);
             this.btnBuscar.TabIndex = 134;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -110,9 +112,10 @@ namespace DealerSystempt2.UI.Consultas
             // 
             // Criteriotxt
             // 
-            this.Criteriotxt.Location = new System.Drawing.Point(317, 80);
+            this.Criteriotxt.Location = new System.Drawing.Point(238, 65);
+            this.Criteriotxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Criteriotxt.Name = "Criteriotxt";
-            this.Criteriotxt.Size = new System.Drawing.Size(362, 22);
+            this.Criteriotxt.Size = new System.Drawing.Size(272, 20);
             this.Criteriotxt.TabIndex = 133;
             // 
             // label1
@@ -122,9 +125,10 @@ namespace DealerSystempt2.UI.Consultas
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(252, 81);
+            this.label1.Location = new System.Drawing.Point(189, 66);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 18);
+            this.label1.Size = new System.Drawing.Size(54, 15);
             this.label1.TabIndex = 132;
             this.label1.Text = "Criterio";
             // 
@@ -134,9 +138,10 @@ namespace DealerSystempt2.UI.Consultas
             this.filtrocmb.Items.AddRange(new object[] {
             "VentaId",
             "ClienteId"});
-            this.filtrocmb.Location = new System.Drawing.Point(82, 80);
+            this.filtrocmb.Location = new System.Drawing.Point(62, 65);
+            this.filtrocmb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.filtrocmb.Name = "filtrocmb";
-            this.filtrocmb.Size = new System.Drawing.Size(151, 24);
+            this.filtrocmb.Size = new System.Drawing.Size(114, 21);
             this.filtrocmb.TabIndex = 131;
             // 
             // label4
@@ -146,9 +151,10 @@ namespace DealerSystempt2.UI.Consultas
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(29, 81);
+            this.label4.Location = new System.Drawing.Point(22, 66);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 18);
+            this.label4.Size = new System.Drawing.Size(40, 15);
             this.label4.TabIndex = 130;
             this.label4.Text = "Filtro";
             // 
@@ -157,17 +163,29 @@ namespace DealerSystempt2.UI.Consultas
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe Print", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Teal;
-            this.label14.Location = new System.Drawing.Point(268, 9);
+            this.label14.Location = new System.Drawing.Point(201, 7);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(398, 43);
+            this.label14.Size = new System.Drawing.Size(319, 33);
             this.label14.TabIndex = 129;
             this.label14.Text = "Consulta de Venta de Vehiculos";
             // 
+            // Imprimirbtn
+            // 
+            this.Imprimirbtn.Location = new System.Drawing.Point(557, 379);
+            this.Imprimirbtn.Name = "Imprimirbtn";
+            this.Imprimirbtn.Size = new System.Drawing.Size(83, 23);
+            this.Imprimirbtn.TabIndex = 136;
+            this.Imprimirbtn.Text = "Imprimir";
+            this.Imprimirbtn.UseVisualStyleBackColor = true;
+            this.Imprimirbtn.Click += new System.EventHandler(this.Imprimirbtn_Click);
+            // 
             // cVentaVehiculos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 471);
+            this.ClientSize = new System.Drawing.Size(659, 414);
+            this.Controls.Add(this.Imprimirbtn);
             this.Controls.Add(this.ConsultaDTG);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.Criteriotxt);
@@ -175,6 +193,7 @@ namespace DealerSystempt2.UI.Consultas
             this.Controls.Add(this.filtrocmb);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label14);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "cVentaVehiculos";
             this.Text = "cVentaVehiculos";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDTG)).EndInit();
@@ -196,5 +215,6 @@ namespace DealerSystempt2.UI.Consultas
         private System.Windows.Forms.ComboBox filtrocmb;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button Imprimirbtn;
     }
 }
