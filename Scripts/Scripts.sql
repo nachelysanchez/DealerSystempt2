@@ -715,3 +715,14 @@ AS
 	else if (@Filtro = '0')
 		SELECT * FROM dbo.eVentasAccesorios
 GO
+
+CREATE PROCEDURE sp_ConsultarVentasVehiculos
+@Filtro int, @Criterio varchar(max)
+AS
+	if(@Filtro = '1')
+		SELECT * FROM dbo.eVentas WHERe VentaId = @Criterio 
+	else if (@Filtro = '2')
+		SELECT * FROM dbo.eVentas WHERE ClienteId = @Criterio
+	else if (@Filtro = '0')
+		SELECT * FROM dbo.eVentas
+GO

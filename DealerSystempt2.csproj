@@ -97,6 +97,12 @@
     <Compile Include="UI\Consultas\cVentasAccesorios.Designer.cs">
       <DependentUpon>cVentasAccesorios.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\cVentaVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cVentaVehiculos.Designer.cs">
+      <DependentUpon>cVentaVehiculos.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rAccesorios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cVentasAccesorios.resx">
       <DependentUpon>cVentasAccesorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cVentaVehiculos.resx">
+      <DependentUpon>cVentaVehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rAccesorios.resx">
       <DependentUpon>rAccesorios.cs</DependentUpon>

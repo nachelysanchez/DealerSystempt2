@@ -49,6 +49,7 @@ namespace DealerSystempt2
             this.suplidoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.vehiculosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaDeAccesoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventaDeVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,7 +161,8 @@ namespace DealerSystempt2
             this.compraDeVehiculosToolStripMenuItem,
             this.suplidoresToolStripMenuItem1,
             this.vehiculosToolStripMenuItem1,
-            this.ventaDeAccesoriosToolStripMenuItem});
+            this.ventaDeAccesoriosToolStripMenuItem,
+            this.ventaDeVehiculosToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -214,6 +216,13 @@ namespace DealerSystempt2
             this.ventaDeAccesoriosToolStripMenuItem.Text = "Venta de Accesorios";
             this.ventaDeAccesoriosToolStripMenuItem.Click += new System.EventHandler(this.ventaDeAccesoriosToolStripMenuItem_Click);
             // 
+            // ventaDeVehiculosToolStripMenuItem
+            // 
+            this.ventaDeVehiculosToolStripMenuItem.Name = "ventaDeVehiculosToolStripMenuItem";
+            this.ventaDeVehiculosToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.ventaDeVehiculosToolStripMenuItem.Text = "Venta de Vehiculos";
+            this.ventaDeVehiculosToolStripMenuItem.Click += new System.EventHandler(this.ventaDeVehiculosToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -253,6 +262,7 @@ namespace DealerSystempt2
         private System.Windows.Forms.ToolStripMenuItem suplidoresToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem vehiculosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ventaDeAccesoriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ventaDeVehiculosToolStripMenuItem;
     }
 }
 
