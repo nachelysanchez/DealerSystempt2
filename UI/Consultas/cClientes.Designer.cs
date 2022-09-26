@@ -50,9 +50,10 @@ namespace DealerSystempt2.UI.Consultas
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe Print", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Teal;
-            this.label14.Location = new System.Drawing.Point(346, 36);
+            this.label14.Location = new System.Drawing.Point(260, 29);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(263, 43);
+            this.label14.Size = new System.Drawing.Size(209, 33);
             this.label14.TabIndex = 101;
             this.label14.Text = "Consulta de Clientes";
             // 
@@ -63,9 +64,10 @@ namespace DealerSystempt2.UI.Consultas
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(40, 94);
+            this.label4.Location = new System.Drawing.Point(30, 76);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 18);
+            this.label4.Size = new System.Drawing.Size(40, 15);
             this.label4.TabIndex = 102;
             this.label4.Text = "Filtro";
             // 
@@ -75,9 +77,10 @@ namespace DealerSystempt2.UI.Consultas
             this.filtrocmb.Items.AddRange(new object[] {
             "ClienteId",
             "Nombre"});
-            this.filtrocmb.Location = new System.Drawing.Point(93, 93);
+            this.filtrocmb.Location = new System.Drawing.Point(70, 76);
+            this.filtrocmb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.filtrocmb.Name = "filtrocmb";
-            this.filtrocmb.Size = new System.Drawing.Size(151, 24);
+            this.filtrocmb.Size = new System.Drawing.Size(114, 21);
             this.filtrocmb.TabIndex = 103;
             // 
             // label1
@@ -87,17 +90,19 @@ namespace DealerSystempt2.UI.Consultas
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(263, 94);
+            this.label1.Location = new System.Drawing.Point(197, 76);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 18);
+            this.label1.Size = new System.Drawing.Size(54, 15);
             this.label1.TabIndex = 104;
             this.label1.Text = "Criterio";
             // 
             // Criteriotxt
             // 
-            this.Criteriotxt.Location = new System.Drawing.Point(328, 93);
+            this.Criteriotxt.Location = new System.Drawing.Point(246, 76);
+            this.Criteriotxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Criteriotxt.Name = "Criteriotxt";
-            this.Criteriotxt.Size = new System.Drawing.Size(362, 22);
+            this.Criteriotxt.Size = new System.Drawing.Size(272, 20);
             this.Criteriotxt.TabIndex = 105;
             // 
             // btnBuscar
@@ -106,10 +111,10 @@ namespace DealerSystempt2.UI.Consultas
             this.btnBuscar.BackColor = System.Drawing.Color.Salmon;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(719, 86);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscar.Location = new System.Drawing.Point(539, 70);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(91, 36);
+            this.btnBuscar.Size = new System.Drawing.Size(68, 29);
             this.btnBuscar.TabIndex = 106;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -127,12 +132,13 @@ namespace DealerSystempt2.UI.Consultas
             this.Telefono,
             this.Cedula,
             this.Ocupacion});
-            this.ConsultaDTG.Location = new System.Drawing.Point(32, 147);
+            this.ConsultaDTG.Location = new System.Drawing.Point(24, 119);
+            this.ConsultaDTG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ConsultaDTG.Name = "ConsultaDTG";
             this.ConsultaDTG.ReadOnly = true;
             this.ConsultaDTG.RowHeadersWidth = 51;
             this.ConsultaDTG.RowTemplate.Height = 24;
-            this.ConsultaDTG.Size = new System.Drawing.Size(827, 311);
+            this.ConsultaDTG.Size = new System.Drawing.Size(620, 253);
             this.ConsultaDTG.TabIndex = 107;
             // 
             // ClienteId
@@ -185,9 +191,9 @@ namespace DealerSystempt2.UI.Consultas
             // 
             // cClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 495);
+            this.ClientSize = new System.Drawing.Size(664, 388);
             this.Controls.Add(this.ConsultaDTG);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.Criteriotxt);
@@ -195,6 +201,7 @@ namespace DealerSystempt2.UI.Consultas
             this.Controls.Add(this.filtrocmb);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label14);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "cClientes";
             this.Text = "Consulta de Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDTG)).EndInit();

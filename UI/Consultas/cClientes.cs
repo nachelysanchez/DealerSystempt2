@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
+using DealerSystempt2.UI.Reportes;
 
 namespace DealerSystempt2.UI.Consultas
 {
@@ -52,5 +54,6 @@ namespace DealerSystempt2.UI.Consultas
             }
 
         }
+
     }
 }

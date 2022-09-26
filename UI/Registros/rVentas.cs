@@ -232,7 +232,7 @@ namespace DealerSystempt2.UI.Registros
                     return;
                 string inserpart;
 
-                inserpart = $"EXEC sp_InsertarEVenta '{FechaDatePicker.Value.ToShortDateString()}', {tipocmb.SelectedIndex}, '{ClienteIdtxt.Text}', {ITBIStxt.Text.Replace(",","")}, {SubTotaltxt.Text.Replace(",", "")}, {Descuentotxt.Text.Replace(",", "")}, {Totaltxt.Text.Replace(",", "")},{Totaltxt.Text.Replace(",", "")}";
+                inserpart = $"EXEC sp_InsertarEVenta '{FechaDatePicker.Value.ToString("yyyy/MM/dd")}', {tipocmb.SelectedIndex}, '{ClienteIdtxt.Text}', {ITBIStxt.Text.Replace(",","")}, {SubTotaltxt.Text.Replace(",", "")}, {Descuentotxt.Text.Replace(",", "")}, {Totaltxt.Text.Replace(",", "")},{Totaltxt.Text.Replace(",", "")}";
                 SqlCommand insert1 = new SqlCommand(inserpart, conexion.Conectar());
 
 
