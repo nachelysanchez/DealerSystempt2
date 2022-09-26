@@ -56,12 +56,14 @@ namespace DealerSystempt2
             this.tarea1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tarea2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ejercicio1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ejercicio2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guíasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nachelyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ejemplo1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ejemplo2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guia3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.desarrolladoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -76,7 +78,7 @@ namespace DealerSystempt2
             this.UsuarioLabel = new System.Windows.Forms.LinkLabel();
             this.SuplidorLabel = new System.Windows.Forms.LinkLabel();
             this.ClienteLabel = new System.Windows.Forms.LinkLabel();
-            this.ejercicio2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tarea3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -280,7 +282,8 @@ namespace DealerSystempt2
             // 
             this.nachelyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tarea1ToolStripMenuItem,
-            this.tarea2ToolStripMenuItem});
+            this.tarea2ToolStripMenuItem,
+            this.tarea3ToolStripMenuItem});
             this.nachelyToolStripMenuItem.Name = "nachelyToolStripMenuItem";
             this.nachelyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nachelyToolStripMenuItem.Text = "Nachely";
@@ -304,9 +307,16 @@ namespace DealerSystempt2
             // ejercicio1ToolStripMenuItem
             // 
             this.ejercicio1ToolStripMenuItem.Name = "ejercicio1ToolStripMenuItem";
-            this.ejercicio1ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ejercicio1ToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
             this.ejercicio1ToolStripMenuItem.Text = "Ejercicio1";
             this.ejercicio1ToolStripMenuItem.Click += new System.EventHandler(this.ejercicio1ToolStripMenuItem_Click);
+            // 
+            // ejercicio2ToolStripMenuItem
+            // 
+            this.ejercicio2ToolStripMenuItem.Name = "ejercicio2ToolStripMenuItem";
+            this.ejercicio2ToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
+            this.ejercicio2ToolStripMenuItem.Text = "Ejercicio2";
+            this.ejercicio2ToolStripMenuItem.Click += new System.EventHandler(this.ejercicio2ToolStripMenuItem_Click);
             // 
             // guíasToolStripMenuItem
             // 
@@ -320,7 +330,8 @@ namespace DealerSystempt2
             // 
             this.nachelyToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.gToolStripMenuItem});
+            this.gToolStripMenuItem,
+            this.guia3ToolStripMenuItem});
             this.nachelyToolStripMenuItem1.Name = "nachelyToolStripMenuItem1";
             this.nachelyToolStripMenuItem1.Size = new System.Drawing.Size(145, 26);
             this.nachelyToolStripMenuItem1.Text = "Nachely";
@@ -354,6 +365,13 @@ namespace DealerSystempt2
             this.ejemplo2ToolStripMenuItem.Size = new System.Drawing.Size(155, 26);
             this.ejemplo2ToolStripMenuItem.Text = "Ejemplo2";
             this.ejemplo2ToolStripMenuItem.Click += new System.EventHandler(this.ejemplo2ToolStripMenuItem_Click);
+            // 
+            // guia3ToolStripMenuItem
+            // 
+            this.guia3ToolStripMenuItem.Name = "guia3ToolStripMenuItem";
+            this.guia3ToolStripMenuItem.Size = new System.Drawing.Size(130, 26);
+            this.guia3ToolStripMenuItem.Text = "Guia3";
+            this.guia3ToolStripMenuItem.Click += new System.EventHandler(this.guia3ToolStripMenuItem_Click);
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -513,12 +531,12 @@ namespace DealerSystempt2
             this.ClienteLabel.Text = "Clientes";
             this.ClienteLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ClienteLabel_LinkClicked);
             // 
-            // ejercicio2ToolStripMenuItem
+            // tarea3ToolStripMenuItem
             // 
-            this.ejercicio2ToolStripMenuItem.Name = "ejercicio2ToolStripMenuItem";
-            this.ejercicio2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.ejercicio2ToolStripMenuItem.Text = "Ejercicio2";
-            this.ejercicio2ToolStripMenuItem.Click += new System.EventHandler(this.ejercicio2ToolStripMenuItem_Click);
+            this.tarea3ToolStripMenuItem.Name = "tarea3ToolStripMenuItem";
+            this.tarea3ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tarea3ToolStripMenuItem.Text = "Tarea3";
+            this.tarea3ToolStripMenuItem.Click += new System.EventHandler(this.tarea3ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -599,6 +617,8 @@ namespace DealerSystempt2
         private System.Windows.Forms.ToolStripMenuItem ejercicio1ToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem ejercicio2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guia3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tarea3ToolStripMenuItem;
     }
 }
 

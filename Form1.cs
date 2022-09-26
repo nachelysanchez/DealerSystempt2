@@ -1,9 +1,11 @@
 ﻿using DealerSystempt2.Guias.Nachely.Clase1;
 using DealerSystempt2.Guias.Nachely.Clase2.Ejemplo1;
 using DealerSystempt2.Guias.Nachely.Clase2.Ejemplo2;
+using DealerSystempt2.Guias.Nachely.Clase3;
 using DealerSystempt2.Tareas.Nachely.Tarea1;
 using DealerSystempt2.Tareas.Nachely.Tarea2;
 using DealerSystempt2.Tareas.Nachely.Tarea2.Ejercicio2;
+using DealerSystempt2.Tareas.Nachely.Tarea3;
 using DealerSystempt2.UI.Consultas;
 using DealerSystempt2.UI.Login;
 using DealerSystempt2.UI.Registros;
@@ -221,6 +223,18 @@ namespace DealerSystempt2
         {
             MenuVehiculo menu = new MenuVehiculo();
             menu.Show();
+        }
+
+        private void guia3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Principal3 menu = new Principal3();
+            menu.Show();
+        }
+
+        private void tarea3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuAlumnos alumnos = new MenuAlumnos();
+            alumnos.Show();
         }
     }
 }
