@@ -252,9 +252,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Tareas\Nachely\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login.jpg" />
+    <None Include="Resources\Carro.jpg" />
     <Content Include="Scripts\Scripts.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

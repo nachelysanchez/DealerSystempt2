@@ -56,29 +56,51 @@ namespace DealerSystempt2
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.VentasVehiculosLink = new System.Windows.Forms.LinkLabel();
             this.VentaAccesoriosLink = new System.Windows.Forms.LinkLabel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.SuplidorLabel = new System.Windows.Forms.LinkLabel();
+            this.ClienteLabel = new System.Windows.Forms.LinkLabel();
+            this.UsuarioLabel = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tareasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nachelyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guíasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nachelyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.desarrolladoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Snow;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.registrosToolStripMenuItem,
-            this.consultasToolStripMenuItem});
+            this.consultasToolStripMenuItem,
+            this.tareasToolStripMenuItem,
+            this.guíasToolStripMenuItem,
+            this.acercaDeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // archivoToolStripMenuItem
             // 
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cerrarSesiónToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
             // registrosToolStripMenuItem
@@ -94,7 +116,7 @@ namespace DealerSystempt2
             this.comprasDeAccesoriosToolStripMenuItem,
             this.comprasDeVehiculosToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
-            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
             this.registrosToolStripMenuItem.Text = "Registros";
             // 
             // usuariosToolStripMenuItem
@@ -172,7 +194,7 @@ namespace DealerSystempt2
             this.ventaDeAccesoriosToolStripMenuItem,
             this.ventaDeVehiculosToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(86, 26);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
             // clientesToolStripMenuItem1
@@ -305,11 +327,132 @@ namespace DealerSystempt2
             this.VentaAccesoriosLink.Text = "Ventas de Accesorios";
             this.VentaAccesoriosLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.VentaAccesoriosLink_LinkClicked);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.pictureBox1);
+            this.groupBox3.Location = new System.Drawing.Point(287, 40);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(481, 440);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox4.Controls.Add(this.UsuarioLabel);
+            this.groupBox4.Controls.Add(this.SuplidorLabel);
+            this.groupBox4.Controls.Add(this.ClienteLabel);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(12, 321);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(246, 125);
+            this.groupBox4.TabIndex = 4;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Personas";
+            // 
+            // SuplidorLabel
+            // 
+            this.SuplidorLabel.AutoSize = true;
+            this.SuplidorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SuplidorLabel.Location = new System.Drawing.Point(18, 63);
+            this.SuplidorLabel.Name = "SuplidorLabel";
+            this.SuplidorLabel.Size = new System.Drawing.Size(62, 18);
+            this.SuplidorLabel.TabIndex = 1;
+            this.SuplidorLabel.TabStop = true;
+            this.SuplidorLabel.Text = "Suplidor";
+            this.SuplidorLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.SuplidorLabel_LinkClicked);
+            // 
+            // ClienteLabel
+            // 
+            this.ClienteLabel.AutoSize = true;
+            this.ClienteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClienteLabel.Location = new System.Drawing.Point(18, 32);
+            this.ClienteLabel.Name = "ClienteLabel";
+            this.ClienteLabel.Size = new System.Drawing.Size(61, 18);
+            this.ClienteLabel.TabIndex = 0;
+            this.ClienteLabel.TabStop = true;
+            this.ClienteLabel.Text = "Clientes";
+            this.ClienteLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ClienteLabel_LinkClicked);
+            // 
+            // UsuarioLabel
+            // 
+            this.UsuarioLabel.AutoSize = true;
+            this.UsuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsuarioLabel.Location = new System.Drawing.Point(18, 94);
+            this.UsuarioLabel.Name = "UsuarioLabel";
+            this.UsuarioLabel.Size = new System.Drawing.Size(60, 18);
+            this.UsuarioLabel.TabIndex = 2;
+            this.UsuarioLabel.TabStop = true;
+            this.UsuarioLabel.Text = "Usuario";
+            this.UsuarioLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.UsuarioLabel_LinkClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DealerSystempt2.Properties.Resources.Carro;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(481, 434);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tareasToolStripMenuItem
+            // 
+            this.tareasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nachelyToolStripMenuItem});
+            this.tareasToolStripMenuItem.Name = "tareasToolStripMenuItem";
+            this.tareasToolStripMenuItem.Size = new System.Drawing.Size(64, 26);
+            this.tareasToolStripMenuItem.Text = "Tareas";
+            // 
+            // nachelyToolStripMenuItem
+            // 
+            this.nachelyToolStripMenuItem.Name = "nachelyToolStripMenuItem";
+            this.nachelyToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nachelyToolStripMenuItem.Text = "Nachely";
+            // 
+            // guíasToolStripMenuItem
+            // 
+            this.guíasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nachelyToolStripMenuItem1});
+            this.guíasToolStripMenuItem.Name = "guíasToolStripMenuItem";
+            this.guíasToolStripMenuItem.Size = new System.Drawing.Size(63, 26);
+            this.guíasToolStripMenuItem.Text = "Guías ";
+            // 
+            // nachelyToolStripMenuItem1
+            // 
+            this.nachelyToolStripMenuItem1.Name = "nachelyToolStripMenuItem1";
+            this.nachelyToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.nachelyToolStripMenuItem1.Text = "Nachely";
+            // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.desarrolladoresToolStripMenuItem});
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(89, 26);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de";
+            // 
+            // desarrolladoresToolStripMenuItem
+            // 
+            this.desarrolladoresToolStripMenuItem.Name = "desarrolladoresToolStripMenuItem";
+            this.desarrolladoresToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.desarrolladoresToolStripMenuItem.Text = "Desarrolladores";
+            this.desarrolladoresToolStripMenuItem.Click += new System.EventHandler(this.desarrolladoresToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 492);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -323,6 +466,10 @@ namespace DealerSystempt2
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,6 +504,19 @@ namespace DealerSystempt2
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.LinkLabel VentasVehiculosLink;
         private System.Windows.Forms.LinkLabel VentaAccesoriosLink;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.LinkLabel UsuarioLabel;
+        private System.Windows.Forms.LinkLabel SuplidorLabel;
+        private System.Windows.Forms.LinkLabel ClienteLabel;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tareasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nachelyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guíasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nachelyToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem desarrolladoresToolStripMenuItem;
     }
 }
 

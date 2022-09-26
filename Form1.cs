@@ -1,4 +1,5 @@
 ﻿using DealerSystempt2.UI.Consultas;
+using DealerSystempt2.UI.Login;
 using DealerSystempt2.UI.Registros;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace DealerSystempt2
         public Form1()
         {
             InitializeComponent();
+            MaximizeBox = false;
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -143,6 +145,38 @@ namespace DealerSystempt2
         {
             rVentas venta = new rVentas();
             venta.Show();
+        }
+
+        private void ClienteLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            rClientes cliente = new rClientes();
+            cliente.Show();
+        }
+
+        private void SuplidorLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            rSuplidores suplidores = new rSuplidores();
+            suplidores.Show();
+        }
+
+        private void UsuarioLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            rUsuarios usuarios = new rUsuarios();
+            usuarios.Show();
+        }
+
+        private void desarrolladoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Desarrolladores:\n\nDesarrolladora Principal: Nachely Sánchez 100046842\nSegundo desarrollador: Juan Manuel Rodriguez");
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Estás seguro que desea cerrar sesión?", "Ventana principal", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                new Login().Show();
+                this.Close();
+            }
         }
     }
 }
