@@ -78,5 +78,11 @@ namespace DealerSystempt2
             cClientes clientes = new cClientes();
             clientes.Show();
         }
+
+        private void accesoriosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cAccesorios accesorios = new cAccesorios();
+            accesorios.Show();
+        }
     }
 }

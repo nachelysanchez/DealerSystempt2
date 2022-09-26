@@ -196,7 +196,7 @@ namespace DealerSystempt2.UI.Consultas
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label14);
             this.Name = "cClientes";
-            this.Text = "cClientes";
+            this.Text = "Consulta de Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDTG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

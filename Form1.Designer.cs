@@ -43,6 +43,7 @@ namespace DealerSystempt2
             this.comprasDeVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.accesoriosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,7 +149,8 @@ namespace DealerSystempt2
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientesToolStripMenuItem1});
+            this.clientesToolStripMenuItem1,
+            this.accesoriosToolStripMenuItem1});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -159,6 +161,13 @@ namespace DealerSystempt2
             this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.clientesToolStripMenuItem1.Text = "Clientes";
             this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
+            // 
+            // accesoriosToolStripMenuItem1
+            // 
+            this.accesoriosToolStripMenuItem1.Name = "accesoriosToolStripMenuItem1";
+            this.accesoriosToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.accesoriosToolStripMenuItem1.Text = "Accesorios";
+            this.accesoriosToolStripMenuItem1.Click += new System.EventHandler(this.accesoriosToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -193,6 +202,7 @@ namespace DealerSystempt2
         private System.Windows.Forms.ToolStripMenuItem comprasDeAccesoriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comprasDeVehiculosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem accesoriosToolStripMenuItem1;
     }
 }
 
