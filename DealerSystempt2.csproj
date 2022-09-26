@@ -60,8 +60,150 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Guias\Nachely\Clase1\Empleados.cs" />
+    <Compile Include="Guias\Nachely\Clase1\rEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase1\rEmpleado.Designer.cs">
+      <DependentUpon>rEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Ejemplo1\Calculadora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Ejemplo1\Calculadora.Designer.cs">
+      <DependentUpon>Calculadora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Ejemplo2\DocentesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Ejemplo2\DocentesForm.Designer.cs">
+      <DependentUpon>DocentesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Ejemplo2\EstudiantesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Ejemplo2\EstudiantesForm.Designer.cs">
+      <DependentUpon>EstudiantesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Ejemplo2\FormSalir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Ejemplo2\FormSalir.Designer.cs">
+      <DependentUpon>FormSalir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Ejemplo2\MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Ejemplo2\MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Ejemplo2\RegistroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Ejemplo2\RegistroForm.Designer.cs">
+      <DependentUpon>RegistroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase2\Multiplicar.cs" />
+    <Compile Include="Guias\Nachely\Clase2\Operacion.cs" />
+    <Compile Include="Guias\Nachely\Clase2\Restar.cs" />
+    <Compile Include="Guias\Nachely\Clase2\Sumar.cs" />
+    <Compile Include="Guias\Nachely\Clase3\Conexion.cs" />
+    <Compile Include="Guias\Nachely\Clase3\Principal3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase3\Principal3.Designer.cs">
+      <DependentUpon>Principal3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase3\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase3\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tareas\Nachely\Tarea1\claUAPA.cs" />
+    <Compile Include="Tareas\Nachely\Tarea1\rFacilitador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea1\rFacilitador.Designer.cs">
+      <DependentUpon>rFacilitador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\claNomina.cs" />
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\Aereo.cs" />
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\Carro.cs" />
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\cTransporteTerrestre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\cTransporteTerrestre.Designer.cs">
+      <DependentUpon>cTransporteTerrestre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\Helicoptero.cs" />
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\Lancha.cs" />
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\Maritimo.cs" />
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\MenuVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\MenuVehiculo.Designer.cs">
+      <DependentUpon>MenuVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\rAereo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\rAereo.Designer.cs">
+      <DependentUpon>rAereo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\rCarro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\rCarro.Designer.cs">
+      <DependentUpon>rCarro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\ReservaVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\ReservaVehiculo.Designer.cs">
+      <DependentUpon>ReservaVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\rLanchas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\rLanchas.Designer.cs">
+      <DependentUpon>rLanchas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\Terrestre.cs" />
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\Vehiculo.cs" />
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\VehiculoGeneralFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\Ejercicio2\VehiculoGeneralFrm.Designer.cs">
+      <DependentUpon>VehiculoGeneralFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\rNomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea2\rNomina.Designer.cs">
+      <DependentUpon>rNomina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea3\Conexion.cs" />
+    <Compile Include="Tareas\Nachely\Tarea3\MenuAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea3\MenuAlumnos.Designer.cs">
+      <DependentUpon>MenuAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea3\rEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea3\rEstudiantes.Designer.cs">
+      <DependentUpon>rEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea3\rMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea3\rMaterias.Designer.cs">
+      <DependentUpon>rMaterias.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultas\cAccesorios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +333,33 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Guias\Nachely\Clase1\rEmpleado.resx">
+      <DependentUpon>rEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guias\Nachely\Clase2\Ejemplo1\Calculadora.resx">
+      <DependentUpon>Calculadora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guias\Nachely\Clase2\Ejemplo2\DocentesForm.resx">
+      <DependentUpon>DocentesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guias\Nachely\Clase2\Ejemplo2\EstudiantesForm.resx">
+      <DependentUpon>EstudiantesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guias\Nachely\Clase2\Ejemplo2\FormSalir.resx">
+      <DependentUpon>FormSalir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guias\Nachely\Clase2\Ejemplo2\MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guias\Nachely\Clase2\Ejemplo2\RegistroForm.resx">
+      <DependentUpon>RegistroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guias\Nachely\Clase3\Principal3.resx">
+      <DependentUpon>Principal3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guias\Nachely\Clase3\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -201,6 +370,42 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea1\rFacilitador.resx">
+      <DependentUpon>rFacilitador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea2\Ejercicio2\cTransporteTerrestre.resx">
+      <DependentUpon>cTransporteTerrestre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea2\Ejercicio2\MenuVehiculo.resx">
+      <DependentUpon>MenuVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea2\Ejercicio2\rAereo.resx">
+      <DependentUpon>rAereo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea2\Ejercicio2\rCarro.resx">
+      <DependentUpon>rCarro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea2\Ejercicio2\ReservaVehiculo.resx">
+      <DependentUpon>ReservaVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea2\Ejercicio2\rLanchas.resx">
+      <DependentUpon>rLanchas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea2\Ejercicio2\VehiculoGeneralFrm.resx">
+      <DependentUpon>VehiculoGeneralFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea2\rNomina.resx">
+      <DependentUpon>rNomina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea3\MenuAlumnos.resx">
+      <DependentUpon>MenuAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea3\rEstudiantes.resx">
+      <DependentUpon>rEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea3\rMaterias.resx">
+      <DependentUpon>rMaterias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cAccesorios.resx">
       <DependentUpon>cAccesorios.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,9 +483,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tareas\Nachely\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\login.jpg" />
     <None Include="Resources\Carro.jpg" />
