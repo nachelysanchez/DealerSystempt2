@@ -1,7 +1,7 @@
 ﻿
 namespace DealerSystempt2.UI.Consultas
 {
-    partial class cAccesorios
+    partial class cComprasAccesorios
     {
         /// <summary>
         /// Required designer variable.
@@ -36,10 +36,10 @@ namespace DealerSystempt2.UI.Consultas
             this.filtrocmb = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.AccesorioId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Existencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompraId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDTG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,17 +49,17 @@ namespace DealerSystempt2.UI.Consultas
             this.ConsultaDTG.AllowUserToDeleteRows = false;
             this.ConsultaDTG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultaDTG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.AccesorioId,
-            this.Nombre,
-            this.Precio,
-            this.Existencia});
-            this.ConsultaDTG.Location = new System.Drawing.Point(15, 145);
+            this.CompraId,
+            this.Fecha,
+            this.Tipo,
+            this.Total});
+            this.ConsultaDTG.Location = new System.Drawing.Point(48, 132);
             this.ConsultaDTG.Name = "ConsultaDTG";
             this.ConsultaDTG.ReadOnly = true;
             this.ConsultaDTG.RowHeadersWidth = 51;
             this.ConsultaDTG.RowTemplate.Height = 24;
             this.ConsultaDTG.Size = new System.Drawing.Size(827, 311);
-            this.ConsultaDTG.TabIndex = 114;
+            this.ConsultaDTG.TabIndex = 121;
             // 
             // btnBuscar
             // 
@@ -67,21 +67,21 @@ namespace DealerSystempt2.UI.Consultas
             this.btnBuscar.BackColor = System.Drawing.Color.Salmon;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(702, 84);
+            this.btnBuscar.Location = new System.Drawing.Point(725, 64);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(91, 36);
-            this.btnBuscar.TabIndex = 113;
+            this.btnBuscar.TabIndex = 120;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // Criteriotxt
             // 
-            this.Criteriotxt.Location = new System.Drawing.Point(311, 91);
+            this.Criteriotxt.Location = new System.Drawing.Point(339, 71);
             this.Criteriotxt.Name = "Criteriotxt";
             this.Criteriotxt.Size = new System.Drawing.Size(362, 22);
-            this.Criteriotxt.TabIndex = 112;
+            this.Criteriotxt.TabIndex = 119;
             // 
             // label1
             // 
@@ -90,22 +90,22 @@ namespace DealerSystempt2.UI.Consultas
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(246, 92);
+            this.label1.Location = new System.Drawing.Point(274, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 18);
-            this.label1.TabIndex = 111;
+            this.label1.TabIndex = 118;
             this.label1.Text = "Criterio";
             // 
             // filtrocmb
             // 
             this.filtrocmb.FormattingEnabled = true;
             this.filtrocmb.Items.AddRange(new object[] {
-            "AccesorioId",
-            "Nombre"});
-            this.filtrocmb.Location = new System.Drawing.Point(76, 91);
+            "CompraId",
+            "SuplidorId"});
+            this.filtrocmb.Location = new System.Drawing.Point(104, 71);
             this.filtrocmb.Name = "filtrocmb";
             this.filtrocmb.Size = new System.Drawing.Size(151, 24);
-            this.filtrocmb.TabIndex = 110;
+            this.filtrocmb.TabIndex = 117;
             // 
             // label4
             // 
@@ -114,10 +114,10 @@ namespace DealerSystempt2.UI.Consultas
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(23, 92);
+            this.label4.Location = new System.Drawing.Point(51, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 18);
-            this.label4.TabIndex = 109;
+            this.label4.TabIndex = 116;
             this.label4.Text = "Filtro";
             // 
             // label14
@@ -125,49 +125,49 @@ namespace DealerSystempt2.UI.Consultas
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Segoe Print", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Teal;
-            this.label14.Location = new System.Drawing.Point(329, 34);
+            this.label14.Location = new System.Drawing.Point(223, 9);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(293, 43);
-            this.label14.TabIndex = 108;
-            this.label14.Text = "Consulta de Accesorios";
+            this.label14.Size = new System.Drawing.Size(437, 43);
+            this.label14.TabIndex = 115;
+            this.label14.Text = "Consulta de Compra de Accesorios";
             // 
-            // AccesorioId
+            // CompraId
             // 
-            this.AccesorioId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AccesorioId.HeaderText = "Accesorio Id";
-            this.AccesorioId.MinimumWidth = 6;
-            this.AccesorioId.Name = "AccesorioId";
-            this.AccesorioId.ReadOnly = true;
+            this.CompraId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CompraId.HeaderText = "Compra Id";
+            this.CompraId.MinimumWidth = 6;
+            this.CompraId.Name = "CompraId";
+            this.CompraId.ReadOnly = true;
             // 
-            // Nombre
+            // Fecha
             // 
-            this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
+            this.Fecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.MinimumWidth = 6;
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
             // 
-            // Precio
+            // Tipo
             // 
-            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
+            this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.MinimumWidth = 6;
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
             // 
-            // Existencia
+            // Total
             // 
-            this.Existencia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Existencia.HeaderText = "Existencia";
-            this.Existencia.MinimumWidth = 6;
-            this.Existencia.Name = "Existencia";
-            this.Existencia.ReadOnly = true;
+            this.Total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Total.HeaderText = "Total";
+            this.Total.MinimumWidth = 6;
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
             // 
-            // cAccesorios
+            // cComprasAccesorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 491);
+            this.ClientSize = new System.Drawing.Size(903, 475);
             this.Controls.Add(this.ConsultaDTG);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.Criteriotxt);
@@ -175,8 +175,8 @@ namespace DealerSystempt2.UI.Consultas
             this.Controls.Add(this.filtrocmb);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label14);
-            this.Name = "cAccesorios";
-            this.Text = "Consulta de Accesorios";
+            this.Name = "cComprasAccesorios";
+            this.Text = "Consulta de ComprasAccesorios";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDTG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -192,9 +192,9 @@ namespace DealerSystempt2.UI.Consultas
         private System.Windows.Forms.ComboBox filtrocmb;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AccesorioId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Existencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CompraId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }

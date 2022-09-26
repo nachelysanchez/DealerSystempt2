@@ -84,5 +84,11 @@ namespace DealerSystempt2
             cAccesorios accesorios = new cAccesorios();
             accesorios.Show();
         }
+
+        private void compraDeAccesoriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cComprasAccesorios accesorios = new cComprasAccesorios();
+            accesorios.Show();
+        }
     }
 }

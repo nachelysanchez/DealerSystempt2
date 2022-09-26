@@ -660,3 +660,14 @@ AS
 	else if (@Filtro = '0')
 		SELECT * FROM Clientes
 GO
+
+CREATE PROCEDURE sp_ConsultarAccesorios
+@Filtro int, @Criterio varchar(max)
+AS
+	if(@Filtro = '1')
+		SELECT * FROM Accesorios WHERe AccesorioId = @Criterio 
+	else if (@Filtro = '2')
+		SELECT * FROM Accesorios WHERE Nombre like '%'+@Criterio+'%'
+	else if (@Filtro = '0')
+		SELECT * FROM Accesorios
+GO
