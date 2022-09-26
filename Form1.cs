@@ -1,6 +1,9 @@
 ﻿using DealerSystempt2.Guias.Nachely.Clase1;
 using DealerSystempt2.Guias.Nachely.Clase2.Ejemplo1;
+using DealerSystempt2.Guias.Nachely.Clase2.Ejemplo2;
 using DealerSystempt2.Tareas.Nachely.Tarea1;
+using DealerSystempt2.Tareas.Nachely.Tarea2;
+using DealerSystempt2.Tareas.Nachely.Tarea2.Ejercicio2;
 using DealerSystempt2.UI.Consultas;
 using DealerSystempt2.UI.Login;
 using DealerSystempt2.UI.Registros;
@@ -200,6 +203,24 @@ namespace DealerSystempt2
         {
             Calculadora cal = new Calculadora();
             cal.Show();
+        }
+
+        private void ejemplo2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuForm main = new MenuForm();
+            main.Show();
+        }
+
+        private void ejercicio1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rNomina nomina = new rNomina();
+            nomina.Show();
+        }
+
+        private void ejercicio2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuVehiculo menu = new MenuVehiculo();
+            menu.Show();
         }
     }
 }
