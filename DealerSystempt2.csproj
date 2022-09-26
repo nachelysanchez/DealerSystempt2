@@ -113,6 +113,13 @@
     <Compile Include="Guias\Nachely\Clase3\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Guias\Nachely\Clase4\Conexion.cs" />
+    <Compile Include="Guias\Nachely\Clase4\Registro1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase4\Registro1.Designer.cs">
+      <DependentUpon>Registro1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tareas\Nachely\Tarea1\claUAPA.cs" />
@@ -340,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Guias\Nachely\Clase3\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guias\Nachely\Clase4\Registro1.resx">
+      <DependentUpon>Registro1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
