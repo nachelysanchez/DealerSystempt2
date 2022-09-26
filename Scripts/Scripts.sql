@@ -671,3 +671,25 @@ AS
 	else if (@Filtro = '0')
 		SELECT * FROM Accesorios
 GO
+
+CREATE PROCEDURE sp_ConsultarComprasVehiculos
+@Filtro int, @Criterio varchar(max)
+AS
+	if(@Filtro = '1')
+		SELECT * FROM dbo.eComprasVehiculos WHERe CompraId = @Criterio 
+	else if (@Filtro = '2')
+		SELECT * FROM dbo.eComprasVehiculos WHERE SuplidorId = @Criterio
+	else if (@Filtro = '0')
+		SELECT * FROM dbo.eComprasVehiculos
+GO
+
+CREATE PROCEDURE sp_ConsultarSuplidores
+@Filtro int, @Criterio varchar(max)
+AS
+	if(@Filtro = '1')
+		SELECT * FROM dbo.Suplidores WHERe SuplidorId = @Criterio 
+	else if (@Filtro = '2')
+		SELECT * FROM dbo.Suplidores WHERE Nombre like  '%'+@Criterio+'%'
+	else if (@Filtro = '0')
+		SELECT * FROM dbo.Suplidores
+GO

@@ -79,6 +79,12 @@
     <Compile Include="UI\Consultas\cComprasVehiculos.Designer.cs">
       <DependentUpon>cComprasVehiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\cSuplidores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cSuplidores.Designer.cs">
+      <DependentUpon>cSuplidores.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rAccesorios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cComprasVehiculos.resx">
       <DependentUpon>cComprasVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cSuplidores.resx">
+      <DependentUpon>cSuplidores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rAccesorios.resx">
       <DependentUpon>rAccesorios.cs</DependentUpon>

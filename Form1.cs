@@ -96,5 +96,11 @@ namespace DealerSystempt2
             cComprasVehiculos vehiculos = new cComprasVehiculos();
             vehiculos.Show();
         }
+
+        private void suplidoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cSuplidores suplidores = new cSuplidores();
+            suplidores.Show();
+        }
     }
 }
