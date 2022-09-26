@@ -90,5 +90,11 @@ namespace DealerSystempt2
             cComprasAccesorios accesorios = new cComprasAccesorios();
             accesorios.Show();
         }
+
+        private void compraDeVehiculosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cComprasVehiculos vehiculos = new cComprasVehiculos();
+            vehiculos.Show();
+        }
     }
 }
