@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace DealerSystempt2.UI.Consultas
 {
-    public partial class cComprasAccesorios : Form
+    public partial class cVentasAccesorios : Form
     {
         Connection conexion;
         OleDbConnection cnn;
-        public cComprasAccesorios()
+        public cVentasAccesorios()
         {
             InitializeComponent();
             MaximizeBox = false;
@@ -40,7 +40,7 @@ namespace DealerSystempt2.UI.Consultas
             {
                 criterio = Criteriotxt.Text;
             }
-            string query1 = "EXEC sp_ConsultarComprasAccesorio " + (filtrocmb.SelectedIndex + 1) + ", " + criterio;
+            string query1 = "EXEC sp_ConsultarVentasAccesorios " + (filtrocmb.SelectedIndex + 1) + ", " + criterio;
             SqlDataAdapter da2 = new SqlDataAdapter(query1, conexion.Conectar());
 
             DataTable dt = new DataTable();
@@ -49,38 +49,8 @@ namespace DealerSystempt2.UI.Consultas
 
             foreach (DataRow dr in dt.Rows)
             {
-                ConsultaDTG.Rows.Add(dr["CompraId"].ToString(), dr["Fecha"].ToString(), dr["Tipo"].ToString(), dr["Total"].ToString());
+                ConsultaDTG.Rows.Add(dr["VentaId"].ToString(), dr["Fecha"].ToString(), dr["Tipo"].ToString(), dr["Total"].ToString());
             }
-        }
-
-        private void ConsultaDTG_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void Criteriotxt_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void filtrocmb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

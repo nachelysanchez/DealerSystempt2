@@ -108,5 +108,11 @@ namespace DealerSystempt2
             cVehiculos vehiculos = new cVehiculos();
             vehiculos.Show();
         }
+
+        private void ventaDeAccesoriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cVentasAccesorios accesorios = new cVentasAccesorios();
+            accesorios.Show();
+        }
     }
 }
