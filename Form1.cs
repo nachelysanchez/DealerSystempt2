@@ -120,5 +120,29 @@ namespace DealerSystempt2
             cVentaVehiculos cVenta = new cVentaVehiculos();
             cVenta.Show();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            rCompras compras = new rCompras();
+            compras.Show();
+        }
+
+        private void compraVehiculosLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            rComprasVehiculos rCompras = new rComprasVehiculos();
+            rCompras.Show();
+        }
+
+        private void VentaAccesoriosLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            rVentasAccesorios venta = new rVentasAccesorios();
+            venta.Show();
+        }
+
+        private void VentasVehiculosLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            rVentas venta = new rVentas();
+            venta.Show();
+        }
     }
 }

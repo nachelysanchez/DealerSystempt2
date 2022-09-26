@@ -103,6 +103,12 @@
     <Compile Include="UI\Consultas\cVentaVehiculos.Designer.cs">
       <DependentUpon>cVentaVehiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rAccesorios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\Consultas\cAccesorios.resx">
       <DependentUpon>cAccesorios.cs</DependentUpon>
@@ -198,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cVentaVehiculos.resx">
       <DependentUpon>cVentaVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rAccesorios.resx">
       <DependentUpon>rAccesorios.cs</DependentUpon>
@@ -244,6 +254,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\login.jpg" />
     <Content Include="Scripts\Scripts.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

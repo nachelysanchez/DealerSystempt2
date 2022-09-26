@@ -50,7 +50,15 @@ namespace DealerSystempt2
             this.vehiculosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaDeAccesoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaDeVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.compraVehiculosLabel = new System.Windows.Forms.LinkLabel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.VentasVehiculosLink = new System.Windows.Forms.LinkLabel();
+            this.VentaAccesoriosLink = new System.Windows.Forms.LinkLabel();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -170,14 +178,14 @@ namespace DealerSystempt2
             // clientesToolStripMenuItem1
             // 
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(241, 26);
             this.clientesToolStripMenuItem1.Text = "Clientes";
             this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
             // 
             // accesoriosToolStripMenuItem1
             // 
             this.accesoriosToolStripMenuItem1.Name = "accesoriosToolStripMenuItem1";
-            this.accesoriosToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.accesoriosToolStripMenuItem1.Size = new System.Drawing.Size(241, 26);
             this.accesoriosToolStripMenuItem1.Text = "Accesorios";
             this.accesoriosToolStripMenuItem1.Click += new System.EventHandler(this.accesoriosToolStripMenuItem1_Click);
             // 
@@ -223,11 +231,87 @@ namespace DealerSystempt2
             this.ventaDeVehiculosToolStripMenuItem.Text = "Venta de Vehiculos";
             this.ventaDeVehiculosToolStripMenuItem.Click += new System.EventHandler(this.ventaDeVehiculosToolStripMenuItem_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox1.Controls.Add(this.compraVehiculosLabel);
+            this.groupBox1.Controls.Add(this.linkLabel1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 59);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(246, 109);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Compras";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(18, 32);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(169, 18);
+            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Compras de Accesorios";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // compraVehiculosLabel
+            // 
+            this.compraVehiculosLabel.AutoSize = true;
+            this.compraVehiculosLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.compraVehiculosLabel.Location = new System.Drawing.Point(18, 63);
+            this.compraVehiculosLabel.Name = "compraVehiculosLabel";
+            this.compraVehiculosLabel.Size = new System.Drawing.Size(158, 18);
+            this.compraVehiculosLabel.TabIndex = 1;
+            this.compraVehiculosLabel.TabStop = true;
+            this.compraVehiculosLabel.Text = "Compras de Vehiculos";
+            this.compraVehiculosLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.compraVehiculosLabel_LinkClicked);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox2.Controls.Add(this.VentasVehiculosLink);
+            this.groupBox2.Controls.Add(this.VentaAccesoriosLink);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(12, 194);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(246, 109);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Ventas";
+            // 
+            // VentasVehiculosLink
+            // 
+            this.VentasVehiculosLink.AutoSize = true;
+            this.VentasVehiculosLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VentasVehiculosLink.Location = new System.Drawing.Point(18, 63);
+            this.VentasVehiculosLink.Name = "VentasVehiculosLink";
+            this.VentasVehiculosLink.Size = new System.Drawing.Size(141, 18);
+            this.VentasVehiculosLink.TabIndex = 1;
+            this.VentasVehiculosLink.TabStop = true;
+            this.VentasVehiculosLink.Text = "Ventas de Vehiculos";
+            this.VentasVehiculosLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.VentasVehiculosLink_LinkClicked);
+            // 
+            // VentaAccesoriosLink
+            // 
+            this.VentaAccesoriosLink.AutoSize = true;
+            this.VentaAccesoriosLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VentaAccesoriosLink.Location = new System.Drawing.Point(18, 32);
+            this.VentaAccesoriosLink.Name = "VentaAccesoriosLink";
+            this.VentaAccesoriosLink.Size = new System.Drawing.Size(152, 18);
+            this.VentaAccesoriosLink.TabIndex = 0;
+            this.VentaAccesoriosLink.TabStop = true;
+            this.VentaAccesoriosLink.Text = "Ventas de Accesorios";
+            this.VentaAccesoriosLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.VentaAccesoriosLink_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 492);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -235,6 +319,10 @@ namespace DealerSystempt2
             this.Text = "Dealer System  ";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,6 +351,12 @@ namespace DealerSystempt2
         private System.Windows.Forms.ToolStripMenuItem vehiculosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ventaDeAccesoriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventaDeVehiculosToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel compraVehiculosLabel;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.LinkLabel VentasVehiculosLink;
+        private System.Windows.Forms.LinkLabel VentaAccesoriosLink;
     }
 }
 
