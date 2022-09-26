@@ -650,3 +650,13 @@ AS
 	EXEC sp_ActualizarExistenciaVehiculoInsertVenta @VehiculoId, @Cantidad
 GO
 
+ALTER PROCEDURE sp_ConsultarClientes
+@Filtro int, @Criterio varchar(max)
+AS
+	if(@Filtro = '1')
+		SELECT * FROM Clientes WHERe ClienteId = @Criterio 
+	else if (@Filtro = '2')
+		SELECT * FROM Clientes WHERE Nombres like '%'+@Criterio+'%'
+	else if (@Filtro = '0')
+		SELECT * FROM Clientes
+GO

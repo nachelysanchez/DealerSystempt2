@@ -1,4 +1,5 @@
-﻿using DealerSystempt2.UI.Registros;
+﻿using DealerSystempt2.UI.Consultas;
+using DealerSystempt2.UI.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -70,6 +71,12 @@ namespace DealerSystempt2
         {
             rComprasVehiculos cvehiculos = new rComprasVehiculos();
             cvehiculos.Show();
+        }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cClientes clientes = new cClientes();
+            clientes.Show();
         }
     }
 }

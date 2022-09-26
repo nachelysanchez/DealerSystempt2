@@ -40,8 +40,9 @@ namespace DealerSystempt2
             this.suplidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasDeAccesoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasDeAccesoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasDeVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,18 +138,27 @@ namespace DealerSystempt2
             this.comprasDeAccesoriosToolStripMenuItem.Text = "Compras de Accesorios";
             this.comprasDeAccesoriosToolStripMenuItem.Click += new System.EventHandler(this.comprasDeAccesoriosToolStripMenuItem_Click);
             // 
-            // consultasToolStripMenuItem
-            // 
-            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
-            this.consultasToolStripMenuItem.Text = "Consultas";
-            // 
             // comprasDeVehiculosToolStripMenuItem
             // 
             this.comprasDeVehiculosToolStripMenuItem.Name = "comprasDeVehiculosToolStripMenuItem";
             this.comprasDeVehiculosToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             this.comprasDeVehiculosToolStripMenuItem.Text = "Compras de Vehiculos";
             this.comprasDeVehiculosToolStripMenuItem.Click += new System.EventHandler(this.comprasDeVehiculosToolStripMenuItem_Click);
+            // 
+            // consultasToolStripMenuItem
+            // 
+            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clientesToolStripMenuItem1});
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // clientesToolStripMenuItem1
+            // 
+            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.clientesToolStripMenuItem1.Text = "Clientes";
+            this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -182,6 +192,7 @@ namespace DealerSystempt2
         private System.Windows.Forms.ToolStripMenuItem ventasDeAccesoriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comprasDeAccesoriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comprasDeVehiculosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
     }
 }
 
