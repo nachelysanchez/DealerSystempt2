@@ -47,6 +47,7 @@ namespace DealerSystempt2
             this.compraDeAccesoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compraDeVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suplidoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.vehiculosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@ namespace DealerSystempt2
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -156,9 +157,10 @@ namespace DealerSystempt2
             this.accesoriosToolStripMenuItem1,
             this.compraDeAccesoriosToolStripMenuItem,
             this.compraDeVehiculosToolStripMenuItem,
-            this.suplidoresToolStripMenuItem1});
+            this.suplidoresToolStripMenuItem1,
+            this.vehiculosToolStripMenuItem1});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(86, 26);
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
             // clientesToolStripMenuItem1
@@ -195,6 +197,13 @@ namespace DealerSystempt2
             this.suplidoresToolStripMenuItem1.Size = new System.Drawing.Size(241, 26);
             this.suplidoresToolStripMenuItem1.Text = "Suplidores";
             this.suplidoresToolStripMenuItem1.Click += new System.EventHandler(this.suplidoresToolStripMenuItem1_Click);
+            // 
+            // vehiculosToolStripMenuItem1
+            // 
+            this.vehiculosToolStripMenuItem1.Name = "vehiculosToolStripMenuItem1";
+            this.vehiculosToolStripMenuItem1.Size = new System.Drawing.Size(241, 26);
+            this.vehiculosToolStripMenuItem1.Text = "Vehiculos";
+            this.vehiculosToolStripMenuItem1.Click += new System.EventHandler(this.vehiculosToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -233,6 +242,7 @@ namespace DealerSystempt2
         private System.Windows.Forms.ToolStripMenuItem compraDeAccesoriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compraDeVehiculosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem suplidoresToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem vehiculosToolStripMenuItem1;
     }
 }
 

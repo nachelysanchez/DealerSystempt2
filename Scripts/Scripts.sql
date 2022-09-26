@@ -693,3 +693,14 @@ AS
 	else if (@Filtro = '0')
 		SELECT * FROM dbo.Suplidores
 GO
+
+CREATE PROCEDURE sp_ConsultarVehiculos
+@Filtro int, @Criterio varchar(max)
+AS
+	if(@Filtro = '1')
+		SELECT * FROM dbo.Vehiculos WHERe VehiculoId = @Criterio 
+	else if (@Filtro = '2')
+		SELECT * FROM dbo.Vehiculos WHERE Modelo like  '%'+@Criterio+'%'
+	else if (@Filtro = '0')
+		SELECT * FROM dbo.Vehiculos
+GO
