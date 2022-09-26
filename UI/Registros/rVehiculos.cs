@@ -112,7 +112,7 @@ namespace DealerSystempt2.UI.Registros
                 Preciotxt.Text = dr1["Precio"].ToString().Trim();
                 marcaCbm.SelectedIndex = int.Parse(dr1["MarcaId"].ToString()) - 1;
                 tipoCmb.SelectedIndex = int.Parse(dr1["TipoId"].ToString()) - 1;
-                cantidadnumeric.Value = int.Parse(dr1["CantidadDisponible"].ToString());
+                cantidadnumeric.Value = int.Parse(dr1["Existencia"].ToString());
                 colorcmb.SelectedIndex = int.Parse(dr1["ColorId"].ToString()) - 1;
                 aniotxt.Text = dr1["Anio"].ToString();
                 combustiblecmb.SelectedIndex = int.Parse(dr1["CombustibleId"].ToString()) - 1;

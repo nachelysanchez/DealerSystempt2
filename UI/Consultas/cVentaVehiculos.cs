@@ -59,7 +59,7 @@ namespace DealerSystempt2.UI.Consultas
         private void Imprimirbtn_Click(object sender, EventArgs e)
         {
             ReportDocument reportDocument = new ReportDocument();
-            reportDocument.Load(@"C:\Users\jimen\source\repos\DealerSystempt2\UI\Reportes\ListadoVentas.rpt");
+            reportDocument.Load(@"C:\Users\nashe\source\repos\Nachely Sanchez\UAPA\DealerSystempt2\UI\Reportes\ListadoVentas.rpt");
             ImprimirReportes reporte = new ImprimirReportes(reportDocument);
             reporte.Show();
         }

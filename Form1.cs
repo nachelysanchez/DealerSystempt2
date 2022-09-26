@@ -2,10 +2,12 @@
 using DealerSystempt2.Guias.Nachely.Clase2.Ejemplo1;
 using DealerSystempt2.Guias.Nachely.Clase2.Ejemplo2;
 using DealerSystempt2.Guias.Nachely.Clase3;
+using DealerSystempt2.Guias.Nachely.Clase4;
 using DealerSystempt2.Tareas.Nachely.Tarea1;
 using DealerSystempt2.Tareas.Nachely.Tarea2;
 using DealerSystempt2.Tareas.Nachely.Tarea2.Ejercicio2;
 using DealerSystempt2.Tareas.Nachely.Tarea3;
+using DealerSystempt2.Tareas.Nachely.Tarea4;
 using DealerSystempt2.UI.Consultas;
 using DealerSystempt2.UI.Login;
 using DealerSystempt2.UI.Registros;
@@ -31,7 +33,7 @@ namespace DealerSystempt2
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rUsuarios user = new rUsuarios();
+            DealerSystempt2.UI.Registros.rUsuarios user = new DealerSystempt2.UI.Registros.rUsuarios();
             user.Show();
         }
 
@@ -169,7 +171,7 @@ namespace DealerSystempt2
 
         private void UsuarioLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            rUsuarios usuarios = new rUsuarios();
+            DealerSystempt2.UI.Registros.rUsuarios usuarios = new DealerSystempt2.UI.Registros.rUsuarios();
             usuarios.Show();
         }
 
@@ -235,6 +237,28 @@ namespace DealerSystempt2
         {
             MenuAlumnos alumnos = new MenuAlumnos();
             alumnos.Show();
+        }
+
+        private void guia4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuGuia4 menu = new MenuGuia4();
+            menu.Show();
+        }
+
+        private void tarea4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuTarea4 tarea = new MenuTarea4();
+            tarea.Show();
+        }
+
+        private void tarea6ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Informacion", "El login del presente proyecto es la prueba de esta tarea de acceso de datos");
+        }
+
+        private void tarea7ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Informacion", "El login y el modificar del presente proyecto es la prueba de esta tarea");
         }
     }
 }

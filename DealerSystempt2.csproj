@@ -120,12 +120,42 @@
     <Compile Include="Guias\Nachely\Clase3\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tareas\Nachely\Tarea4\cCiudades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea4\cCiudades.Designer.cs">
+      <DependentUpon>cCiudades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Guias\Nachely\Clase4\Conexion.cs" />
+    <Compile Include="Tareas\Nachely\Tarea4\cUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea4\cUsuarios.Designer.cs">
+      <DependentUpon>cUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase4\MenuGuia4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase4\MenuGuia4.Designer.cs">
+      <DependentUpon>MenuGuia4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Guias\Nachely\Clase4\Registro1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Guias\Nachely\Clase4\Registro1.Designer.cs">
       <DependentUpon>Registro1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase4\rPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guias\Nachely\Clase4\rPedidos.Designer.cs">
+      <DependentUpon>rPedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea4\rUsuariosTareas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea4\rUsuariosTareas.Designer.cs">
+      <DependentUpon>rUsuariosTareas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -210,6 +240,19 @@
     </Compile>
     <Compile Include="Tareas\Nachely\Tarea3\rMaterias.Designer.cs">
       <DependentUpon>rMaterias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea4\Conexion.cs" />
+    <Compile Include="Tareas\Nachely\Tarea4\MenuTarea4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea4\MenuTarea4.Designer.cs">
+      <DependentUpon>MenuTarea4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea4\rCiudades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tareas\Nachely\Tarea4\rCiudades.Designer.cs">
+      <DependentUpon>rCiudades.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Consultas\cAccesorios.cs">
       <SubType>Form</SubType>
@@ -367,8 +410,23 @@
     <EmbeddedResource Include="Guias\Nachely\Clase3\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea4\cCiudades.resx">
+      <DependentUpon>cCiudades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea4\cUsuarios.resx">
+      <DependentUpon>cUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guias\Nachely\Clase4\MenuGuia4.resx">
+      <DependentUpon>MenuGuia4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Guias\Nachely\Clase4\Registro1.resx">
       <DependentUpon>Registro1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Guias\Nachely\Clase4\rPedidos.resx">
+      <DependentUpon>rPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea4\rUsuariosTareas.resx">
+      <DependentUpon>rUsuariosTareas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -415,6 +473,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tareas\Nachely\Tarea3\rMaterias.resx">
       <DependentUpon>rMaterias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea4\MenuTarea4.resx">
+      <DependentUpon>MenuTarea4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tareas\Nachely\Tarea4\rCiudades.resx">
+      <DependentUpon>rCiudades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cAccesorios.resx">
       <DependentUpon>cAccesorios.cs</DependentUpon>

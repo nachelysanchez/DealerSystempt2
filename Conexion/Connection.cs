@@ -12,9 +12,9 @@ namespace DealerSystempt2.Conexion
     class Connection
     {
         //NACH
-        //public static string svname = @"LAPTOP-TN73JHLV\SQLEXPRESS";
+        public static string svname = @"LAPTOP-TN73JHLV\SQLEXPRESS";
         //BRIAN
-        public static string svname = @"BRIAN-PC\BRIANSQLEXPRESS";
+        //public static string svname = @"BRIAN-PC\BRIANSQLEXPRESS";
         private static string dbname = "DealerSystem";
 
         private SqlDataAdapter dataAdapter;
